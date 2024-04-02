@@ -9,6 +9,7 @@
 8. Object detection
 9. Object classification
 10. CNN ?? will not spill yet.. just beans to grab.
+11. Camera Calibration (basics only)
 
 This is what i think i want to have it posted. Will do some CNN not all of it :).
 All code in Cpp, if time permits will have it in py.
