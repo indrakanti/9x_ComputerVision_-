@@ -1,4 +1,4 @@
-# Computer Vision Learning Series
+# Computer Vision Learn and Learn from sharing
 
 ## Overview
 This series aims to provide a structured understanding of computer vision, starting from fundamental concepts and gradually building up to more advanced techniques. Each topic will be covered in three parts:
