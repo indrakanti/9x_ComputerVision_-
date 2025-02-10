@@ -26,7 +26,7 @@ Interference occurs when two or more waves overlap, leading to **constructive** 
 ### **Young's Double-Slit Experiment**
 One of the most famous experiments demonstrating the wave nature of light.
 
-![Double-Slit Experiment](assets/Interference_of_two_waves.png)
+![Double-Slit Experiment](https://en.wikipedia.org/wiki/Double-slit_experiment#/media/File:Double-slit.svg)
 
 When light passes through two closely spaced slits, an interference pattern appears on the screen.
 
