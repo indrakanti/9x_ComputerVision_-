@@ -42,7 +42,6 @@ where:
 ### Point Source Casting Shadows
 A point light source creates sharp shadows, but due to diffraction and reflection, light rays cannot always be traced back to their source.
 
-![Light Casting Shadows](https://upload.wikimedia.org/wikipedia/commons/7/74/Shadow_of_a_Cube.svg)
 
 ## 5. Pin-Hole Camera
 A pin-hole camera is a simple optical device that projects an inverted image of an object onto a surface through a small aperture.
@@ -51,7 +50,7 @@ A pin-hole camera is a simple optical device that projects an inverted image of 
 - A larger hole causes blurring due to overlapping light rays.
 - An extremely small hole leads to diffraction, reducing image clarity.
 
-![Pinhole Camera](https://upload.wikimedia.org/wikipedia/commons/d/d3/Pinhole-camera.png)
+![Pinhole Camera](assets/Pinhole.png)
 
 ## 6. Lenses and Optics
 Lenses focus or diverge light rays based on their curvature.
