@@ -3,7 +3,7 @@
 ## 1. What is Light?
 Light is an electromagnetic wave composed of oscillating electric and magnetic fields perpendicular to each other and the direction of wave propagation.
 
-![Electromagnetic Wave Representation](https://commons.wikimedia.org/wiki/File:EM-Wave.gif)
+![Electromagnetic Wave Representation](assets/EM-Wave.gif)
 
 The electric field (E) and magnetic field (B) propagate through space, carrying energy and momentum. Light does not require a medium and can travel through a vacuum.
 
