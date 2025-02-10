@@ -2,6 +2,7 @@
 
 ## 1. What is Light?
 Light is an electromagnetic wave composed of oscillating electric and magnetic fields perpendicular to each other and the direction of wave propagation.
+(https://commons.wikimedia.org/wiki/File:EM-Wave.gif; Gif taken from here)
 
 ![Electromagnetic Wave Representation](assets/EM-Wave.gif)
 
@@ -17,7 +18,7 @@ Light exhibits both wave-like and particle-like properties, depending on how it 
   \[ \Delta x \Delta p \geq \frac{h}{2} \]
   This principle states that the more precisely the position (\(x\)) of a photon is known, the less precisely its momentum (\(p\)) can be determined, and vice versa.
 
-![Wave-Particle Duality](https://upload.wikimedia.org/wikipedia/commons/2/2c/Wave_particle_duality_pdobson.svg)
+![Wave-Particle Duality](assets/wave_particle_duality.gif)
 
 ## 3. Wave Interference and Fringes
 Interference occurs when two or more waves overlap, leading to **constructive** (bright) and **destructive** (dark) fringes.
