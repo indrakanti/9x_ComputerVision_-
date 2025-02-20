@@ -6,20 +6,27 @@ Image filtering is a fundamental technique in image processing and computer visi
 ## Types of Filters
 Filters can be broadly categorized into:
 
-### 1. **Linear Filters**
+### 1. **Point Filtering**
+Point filtering processes images at the pixel level independently of neighboring pixel values. These operations focus on modifying the intensity of individual pixels and are often used for contrast enhancement, thresholding, and intensity transformations. Examples include:
+- **Brightness Adjustment** – Adding a constant value to all pixels.
+- **Contrast Adjustment** – Scaling pixel intensity values.
+- **Thresholding** – Converting grayscale images to binary using a threshold value.
+- **Gamma Correction** – Adjusting pixel intensities using a power-law function.
+
+### 2. **Linear Filters**
 Linear filters modify pixel values by computing a weighted sum of neighboring pixels using a convolution operation. Examples include:
 - **Box Blur (Average Filter)** – Averages pixel values in a region to reduce noise and smooth the image.
 - **Gaussian Blur** – Applies a weighted averaging based on a Gaussian function to preserve edges while reducing noise.
 - **Sharpening Filter** – Enhances edges and fine details by emphasizing intensity changes.
 - **Edge Detection Filters (Sobel, Prewitt, Roberts)** – Compute gradients in the image to highlight edges.
 
-### 2. **Non-Linear Filters**
+### 3. **Non-Linear Filters**
 Non-linear filters do not use simple weighted sums but instead apply rules based on pixel values. Examples include:
 - **Median Filter** – Replaces each pixel with the median value of its neighborhood to remove salt-and-pepper noise.
 - **Bilateral Filter** – Preserves edges while smoothing by considering both spatial distance and intensity difference.
 - **Adaptive Filters** – Modify behavior based on local image characteristics (e.g., Adaptive Gaussian filtering).
 
-### 3. **Frequency Domain Filters**
+### 4. **Frequency Domain Filters**
 Instead of modifying pixel values directly, these filters transform the image into the frequency domain and apply modifications:
 - **Low-Pass Filters (LPF)** – Remove high-frequency details to smooth images (e.g., Gaussian LPF).
 - **High-Pass Filters (HPF)** – Enhance high-frequency details like edges and textures.
