@@ -39,14 +39,28 @@ Example: ![3x3 box filter sample](../01_Images/box_filter_3x3.png)
 
 ### 5x5 Box Filter:
 $$
-\frac{1}{25} \begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \end{bmatrix}
+\frac{1}{25} \begin{bmatrix} 
+1 & 1 & 1 & 1 & 1 \\ 
+1 & 1 & 1 & 1 & 1 \\ 
+1 & 1 & 1 & 1 & 1 \\ 
+1 & 1 & 1 & 1 & 1 \\ 
+1 & 1 & 1 & 1 & 1 
+\end{bmatrix}
 $$
 
 Example: ![5x5 box filter sample](../01_Images/box_filter_5x5.png)
 
 ### 7x7 Box Filter:
 $$
-\frac{1}{49} \begin{bmatrix} 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \end{bmatrix}
+\frac{1}{49} \begin{bmatrix} 
+1 & 1 & 1 & 1 & 1 & 1 & 1  \\
+1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 
+1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 
+1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 
+1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 
+1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 
+1 & 1 & 1 & 1 & 1 & 1 & 1  
+\end{bmatrix}
 $$
 
 Example: ![5x5 box filter sample](../01_Images/box_filter_7x7.png)
