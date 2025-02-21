@@ -6,9 +6,9 @@ A box filter is a simple spatial filtering technique used in image processing to
 ## Mathematical Representation
 A box filter is defined using a convolution operation with a kernel, where each value in the kernel is equal and sums to 1:
 
-\[
+$$
 G(x, y) = \frac{1}{N} \sum_{i=-k}^{k} \sum_{j=-k}^{k} I(x+i, y+j)
-\]
+$$
 
 where:
 - \( G(x, y) \) is the output pixel value at position \( (x, y) \).
@@ -21,6 +21,10 @@ where:
 - **Noise Reduction:** Helps suppress random variations in pixel intensities.
 - **Edge Softening:** Can reduce sharp transitions in an image, leading to smoother edges.
 
+Example:  This is a sample synthetic image.
+![Sample input image](../01_Images/original_synthetic.png)
+
+
 ## Example of Box Filter Kernels
 ### 3x3 Box Filter:
 $$
@@ -31,11 +35,20 @@ $$
 \end{bmatrix}
 $$
 
+Example: ![3x3 box filter sample](../01_Images/box_filter_3x3.png)
+
 ### 5x5 Box Filter:
 $$
-\frac{1}{25} $\begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \end{bmatrix}$
+\frac{1}{25} \begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \end{bmatrix}
 $$
 
-## Synthetic Images Demonstrating Box Filtering
-We will generate a synthetic image consisting of a gradient and apply different sizes of box filters to show the effects visually.
+Example: ![5x5 box filter sample](../01_Images/box_filter_5x5.png)
+
+### 7x7 Box Filter:
+$$
+\frac{1}{49} \begin{bmatrix} 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \end{bmatrix}
+$$
+
+Example: ![5x5 box filter sample](../01_Images/box_filter_7x7.png)
+
 
