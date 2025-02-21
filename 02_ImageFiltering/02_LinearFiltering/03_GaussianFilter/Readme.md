@@ -17,6 +17,9 @@ where:
 - \( \sigma \) (sigma) is the standard deviation of the Gaussian distribution, which controls the degree of blurring.
 - \( x \) and \( y \) are the distances from the center pixel.
 
+Example:  This is a sample synthetic image.
+![Sample input image](../01_Images/Checker_original.png)
+
 ### Example Gaussian Kernels
 #### 3x3 Gaussian Kernel with \( \sigma = 1.0 \):
 $$
@@ -26,6 +29,9 @@ $$
 1 & 2 & 1 
 \end{bmatrix}
 $$
+
+Example: ![3x3 Gaussian filter sample](../01_Images/gaussian_filter_3x3_new.png)
+
 
 #### 5x5 Gaussian Kernel with \( \sigma = 1.4 \):
 $$
@@ -37,6 +43,8 @@ $$
 1 & 4 & 6 & 4 & 1 
 \end{bmatrix}
 $$
+
+Example: ![5x5 Gaussian filter sample](../01_Images/gaussian_filter_5x5_new.png)
 
 ## Effects of Gaussian Filtering
 - **Blurring:** Smooths images while maintaining better edge structures than a box filter.

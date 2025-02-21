@@ -1,13 +1,14 @@
 CC = g++
 CFLAGS = -Wall -O2 -std=c++17
 LDFLAGS = `pkg-config --cflags --libs opencv4`
-TARGET = box_filter
-SRC = 02_BoxFilter/boxfilter.cpp
+SRC_DIRS = $(wildcard */)
+SRC_FILES = $(wildcard $(SRC_DIRS:%=%*.cpp))
+TARGETS = $(SRC_FILES:%.cpp=%)
 
-all: check_opencv $(TARGET)
+all: check_opencv $(TARGETS)
 
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
+$(TARGETS): % : %.cpp
+	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
 check_opencv:
 	@if ! pkg-config --exists opencv4; then \
@@ -16,4 +17,4 @@ check_opencv:
 	fi
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGETS)
