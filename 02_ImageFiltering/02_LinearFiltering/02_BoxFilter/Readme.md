@@ -3,9 +3,6 @@
 ## Overview
 A box filter is a simple spatial filtering technique used in image processing to blur an image, reduce noise, or smooth edges. It works by averaging the pixel values in a defined neighborhood around each pixel, effectively replacing each pixel with the mean of its surrounding pixels. This operation helps remove high-frequency components and smoothens the image.
 
-This is a sample synthetic image.
-![Sample input image](../01_Images/original_synthetic.png)
-
 ## Mathematical Representation
 A box filter is defined using a convolution operation with a kernel, where each value in the kernel is equal and sums to 1:
 
@@ -30,22 +27,10 @@ where:
 \frac{1}{9} \begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}
 \]
 
-Example: ![3x3 box filter sample](../01_Images/box_filter_3x3.png)
-
-
 ### 5x5 Box Filter:
 \[
 \frac{1}{25} \begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \end{bmatrix}
 \]
-
-Example: ![5x5 box filter sample](../01_Images/box_filter_5x5.png)
-
-### 7x7 Box Filter:
-\[
-\frac{1}{49} \begin{bmatrix} 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 & 1 & 1  \end{bmatrix}
-\]
-
-Example: ![5x5 box filter sample](../01_Images/box_filter_7x7.png)
 
 ## Synthetic Images Demonstrating Box Filtering
 We will generate a synthetic image consisting of a gradient and apply different sizes of box filters to show the effects visually.
