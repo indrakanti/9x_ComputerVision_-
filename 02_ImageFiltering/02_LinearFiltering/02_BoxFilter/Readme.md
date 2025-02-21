@@ -7,7 +7,7 @@ A box filter is a simple spatial filtering technique used in image processing to
 A box filter is defined using a convolution operation with a kernel, where each value in the kernel is equal and sums to 1:
 
 \[
-G(x, y) = \frac{1}{N} \sum_{i=-k}^{k} \sum_{j=-k}^{k} I(x+i, y+j)
+G(x, y) = $\frac{1}{N} \sum_{i=-k}^{k} \sum_{j=-k}^{k} I(x+i, y+j)
 \]
 
 where:
@@ -24,13 +24,14 @@ where:
 ## Example of Box Filter Kernels
 ### 3x3 Box Filter:
 \[
-\frac{1}{9} \begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}
+\frac{1}{9} $\begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}$
 \]
 
 ### 5x5 Box Filter:
 \[
-\frac{1}{25} \begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \end{bmatrix}
+\frac{1}{25} $\begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \end{bmatrix}$
 \]
 
 ## Synthetic Images Demonstrating Box Filtering
 We will generate a synthetic image consisting of a gradient and apply different sizes of box filters to show the effects visually.
+
