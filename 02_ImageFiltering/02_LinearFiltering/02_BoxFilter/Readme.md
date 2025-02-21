@@ -34,4 +34,3 @@ where:
 
 ## Synthetic Images Demonstrating Box Filtering
 We will generate a synthetic image consisting of a gradient and apply different sizes of box filters to show the effects visually.
-
