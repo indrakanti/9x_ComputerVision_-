@@ -5,7 +5,7 @@ def apply_box_filter(image, kernel_size):
     return cv2.blur(image, (kernel_size, kernel_size))
 
 if __name__ == "__main__":
-    image = cv2.imread("../01_Images/original_image.png", cv2.IMREAD_GRAYSCALE)
+    image = cv2.imread("../../01_Images/original_image.png", cv2.IMREAD_GRAYSCALE)
     if image is None:
         print("Error: Image not found!")
         exit(1)
