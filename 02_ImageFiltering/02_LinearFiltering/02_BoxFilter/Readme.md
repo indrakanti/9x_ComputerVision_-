@@ -23,13 +23,13 @@ where:
 
 ## Example of Box Filter Kernels
 ### 3x3 Box Filter:
-\[
+$$
 \frac{1}{9} \begin{bmatrix} 
 1 & 1 & 1 \\
 1 & 1 & 1 \\
 1 & 1 & 1 
 \end{bmatrix}
-\]
+$$
 
 ### 5x5 Box Filter:
 \[
