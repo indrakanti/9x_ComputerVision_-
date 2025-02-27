@@ -15,7 +15,9 @@ Light exhibits both wave-like and particle-like properties, depending on how it 
 - **Frequency (ν)**: Number of oscillations per second (Hz).
 - **Wavelength (λ)**: Distance between successive wave crests (m).
 - **Heisenberg's Uncertainty Principle**:
-  \[ \Delta x \Delta p \geq \frac{h}{2} \]
+  \[
+   \Delta x \Delta p \geq \frac{h}{2}
+  \]
   This principle states that the more precisely the position (\(x\)) of a photon is known, the less precisely its momentum (\(p\)) can be determined, and vice versa.
 
 ![Wave-Particle Duality](assets/wave_particle_duality.gif)
