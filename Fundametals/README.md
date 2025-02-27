@@ -34,7 +34,9 @@ When light passes through two closely spaced slits, an interference pattern appe
 
 ## 4. Properties of Light and the Light Spectrum
 ### Energy of Light
-\[ E = \frac{hc}{\lambda} \]
+\[
+E = \frac{hc}{\lambda} 
+\]
 where:
 - \( E \) = Energy of a photon
 - \( h \) = Planck's constant
