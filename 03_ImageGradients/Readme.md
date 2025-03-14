@@ -37,7 +37,7 @@ where:
 
 The magnitude of the gradient is computed as:
 $$
-G = \sqrt {G_x^2 + G_y^2}
+G = \\sqrt {G_x^2 + G_y^2}
 $$
 This measures the strength of edges in the image.
 
