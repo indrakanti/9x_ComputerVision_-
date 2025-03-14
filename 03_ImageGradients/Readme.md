@@ -31,15 +31,14 @@ G_x = \frac{\partial I}{\partial x}, \quad G_y = \frac{\partial I}{\partial y}
 $$
 
 where:
-- \( $$ G_x $$ \) represents changes in intensity along the horizontal axis.
-- \( $$ G_y $$ \) represents changes in intensity along the vertical axis.
+- \( G_x \) represents changes in intensity along the horizontal axis.
+- \( G_y \) represents changes in intensity along the vertical axis.
 - \( I \) is the input image.
 
 The magnitude of the gradient is computed as:
 
-$$
 G = $`\sqrt {G_x^2 + G_y^2}`$
-$$
+
 This measures the strength of edges in the image.
 
 ## Derivative Filters
@@ -47,9 +46,16 @@ This measures the strength of edges in the image.
 These filters approximate the first derivative of the image by computing intensity differences between neighboring pixels. Common first-order derivative filters include:
 
 #### a) **Roberts Cross Operator**
-\[
-G_x = \begin{bmatrix} +1 & 0 \\ 0 & -1 \end{bmatrix}, \quad G_y = \begin{bmatrix} 0 & +1 \\ -1 & 0 \end{bmatrix}
-\]
+$$
+G_x = \begin{bmatrix} 
++1 & 0 \\
+0 & -1 
+\end{bmatrix}
+, \quad G_y = \begin{bmatrix} 
+0 & +1 \\
+-1 & 0 \
+end{bmatrix}
+$$
 
 #### b) **Sobel Filter: A Derivative Filter with Spatial Smoothing**
 The Sobel filter enhances edge detection by incorporating smoothing and directional sensitivity, making it highly effective for detecting edges in various orientations.
