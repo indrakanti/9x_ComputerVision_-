@@ -56,15 +56,17 @@ $$
 $$
    - This kernel detects **vertical edges** by calculating intensity differences from left to right.
 
-1. **Vertical Gradient Kernel (\( G_y \))**
-   \[
+1. **Vertical Gradient Kernel ( $'( G_y \)'$ )**
+
+   $$
    G_y =
    \begin{bmatrix}
    -1 & -2 & -1 \\
    0 & 0 & 0 \\
    +1 & +2 & +1
    \end{bmatrix}
-   \]
+   $$
+   
    - This kernel detects **horizontal edges** by calculating intensity differences from top to bottom.
 
 Each kernel applies a weighted sum of pixel values to enhance directional changes.
@@ -76,16 +78,14 @@ For each pixel in the image:
 3. Store the result as the gradient value at that pixel.
 4. Repeat for every pixel in the image.
 
-After obtaining \( G_x \) and \( G_y \), compute:
-\[
-G = \sqrt{G_x^2 + G_y^2}
-\]
-and
-\[
-\theta = \tan^{-1} \left(\frac{G_y}{G_x}\right)
-\]
+After obtaining $`( G_x )`$ and $`( G_y )`$, compute:
 
-### **Combining \( G_x \) and \( G_y \)**
+$` G = \sqrt{G_x^2 + G_y^2} `$
+and
+
+$` \theta = \tan^{-1} \left(\frac{G_y}{G_x}\right) `$
+
+### **Combining $`( G_x )`$ and $`( G_y )`$ **
 To get the final edge-detected image:
 - Compute the **gradient magnitude** at each pixel.
 - Apply **thresholding** to remove weak edges.
