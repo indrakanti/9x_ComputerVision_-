@@ -58,14 +58,14 @@ $$
 
 1. **Vertical Gradient Kernel ( $'( G_y \)'$ )**
 
-   $$
+$$
    G_y =
    \begin{bmatrix}
    -1 & -2 & -1 \\
    0 & 0 & 0 \\
    +1 & +2 & +1
    \end{bmatrix}
-   $$
+$$
    
    - This kernel detects **horizontal edges** by calculating intensity differences from top to bottom.
 
