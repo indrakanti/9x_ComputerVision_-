@@ -31,13 +31,13 @@ G_x = \frac{\partial I}{\partial x}, \quad G_y = \frac{\partial I}{\partial y}
 $$
 
 where:
-- \( G_x \) represents changes in intensity along the horizontal axis.
-- \( G_y \) represents changes in intensity along the vertical axis.
+- \( $$ G_x $$ \) represents changes in intensity along the horizontal axis.
+- \( $$ G_y $$ \) represents changes in intensity along the vertical axis.
 - \( I \) is the input image.
 
 The magnitude of the gradient is computed as:
 $$
-G = \sqrt{G_x^2 + G_y^2}
+G = \sqrt {G_x^2 + G_y^2}
 $$
 This measures the strength of edges in the image.
 
