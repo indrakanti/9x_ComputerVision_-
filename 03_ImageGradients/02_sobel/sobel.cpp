@@ -1,8 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 
-cv::Mat applySobelFilter(const cv::Mat& image, cv::Mat& gradientMagnitude) {
-    cv::Mat gradX, gradY;
+cv::Mat applySobelFilter(const cv::Mat& image, cv::Mat& gradientMagnitude, cv::Mat& gradX, cv::Mat& gradY) {
     cv::Sobel(image, gradX, CV_64F, 1, 0, 3);
     cv::Sobel(image, gradY, CV_64F, 0, 1, 3);
     
@@ -24,11 +23,13 @@ int main() {
         return -1;
     }
     
-    cv::Mat gradientMagnitude;
-    cv::Mat sobelEdges = applySobelFilter(image, gradientMagnitude);
+    cv::Mat gradientMagnitude, gradX, gradY;
+    cv::Mat sobelEdges = applySobelFilter(image, gradientMagnitude, gradX, gradY);
     
     cv::imwrite("../01_Images/sobel_edges.png", sobelEdges);
     cv::imwrite("../01_Images/gradient_magnitude.png", gradientMagnitude);
+    cv::imwrite("../01_Images/sobel_x.png", gradX);
+    cv::imwrite("../01_Images/sobel_y.png", gradY);
     
     return 0;
 }
