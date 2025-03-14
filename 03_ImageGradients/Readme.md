@@ -12,9 +12,21 @@ Applying a smoothing filter before computing derivatives helps suppress noise an
 A Gaussian filter smooths the image by averaging pixel intensities, reducing noise before computing gradients.
 
 #### **Gaussian Kernel (3×3, σ = 1.0):**
-\[
-G = \frac{1}{16} \begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 1 \end{bmatrix}
-\]
+$$
+G = \frac{1}{16} \begin{bmatrix} 
+1 & 2 & 1 \\
+2 & 4 & 2 \\
+1 & 2 & 1 
+\end{bmatrix}
+$$
+
+$$
+\frac{1}{16} \begin{bmatrix} 
+1 & 2 & 1 \\ 
+2 & 4 & 2 \\ 
+1 & 2 & 1 
+\end{bmatrix}
+$$
 
 This step ensures that only significant edges remain in the processed image.
 
