@@ -91,24 +91,11 @@ To get the final edge-detected image:
 - Apply **thresholding** to remove weak edges.
 - The result is a binary or grayscale edge-detected image.
 
-## Step 3: Laplacian Edge Detection
-Unlike Sobel filtering, the **Laplacian filter** detects edges **in all directions simultaneously** by computing the second derivative of the image.
-
-#### **Laplacian Operator**
-\[
-L = \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{bmatrix}
-\]
-
-Laplacian filtering produces:
-- **`laplacian_edges.png`** → Edge-detected image using the Laplacian operator.
-
 ## Summary of Process and Outputs
 | Step | Process | Output Image |
 |------|---------|--------------|
-| 1 | Apply Gaussian smoothing | `smoothed_image.png` |
-| 2 | Compute Sobel gradients (X and Y) | `sobel_edges.png` |
+| 1 | Compute Sobel gradients (X and Y) | `sobel_edges.png` |
 | 2 | Compute gradient magnitude | `gradient_magnitude.png` |
-| 3 | Apply Laplacian filter | `laplacian_edges.png` |
 
 ## Applications of Derivative Filters
 - **Object Detection**: Identifying boundaries in an image.
