@@ -33,7 +33,7 @@ G = $`\sqrt{G_x^2 + G_y^2}`$
 
 
 where:
-- \( G_x \) is the gradient in the **horizontal direction**.
+- $`\( G_x \)`$ is the gradient in the **horizontal direction**.
 - \( G_y \) is the gradient in the **vertical direction**.
 - \( G \) is the overall **gradient magnitude**, which represents edge strength.
 
