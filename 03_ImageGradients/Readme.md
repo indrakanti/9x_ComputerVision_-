@@ -58,9 +58,17 @@ $$
 #### b) **Sobel Filter: A Derivative Filter with Spatial Smoothing**
 The Sobel filter enhances edge detection by incorporating smoothing and directional sensitivity, making it highly effective for detecting edges in various orientations.
 
-\[
-G_x = \begin{bmatrix} -1 & 0 & +1 \\ -2 & 0 & +2 \\ -1 & 0 & +1 \end{bmatrix}, \quad G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ +1 & +2 & +1 \end{bmatrix}
-\]
+$$
+G_x = \begin{bmatrix} 
+-1 & 0 & +1 \\
+-2 & 0 & +2 \\
+-1 & 0 & +1 
+ \end{bmatrix}, \quad G_y = \begin{bmatrix} 
+-1 & -2 & -1 \\ 
+0 & 0 & 0 \\ 
++1 & +2 & +1 
+\end{bmatrix}
+$$
 
 The Sobel filter applies a weighted difference to pixels, emphasizing edge strength while reducing sensitivity to noise.
 
