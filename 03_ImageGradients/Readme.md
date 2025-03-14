@@ -46,12 +46,12 @@ This measures the strength of edges in the image.
 These filters approximate the first derivative of the image by computing intensity differences between neighboring pixels. Common first-order derivative filters include:
 
 #### a) **Roberts Cross Operator**
-$$
-G_x = \begin{bmatrix} 
+$$ G_x = \begin{bmatrix} 
 +1 & 0 \\
 0 & -1 
 \end{bmatrix}
-, \quad G_y = \begin{bmatrix} 
+
+,\quad G_y = \begin{bmatrix} 
 0 & +1 \\
 -1 & 0 \
 end{bmatrix}
