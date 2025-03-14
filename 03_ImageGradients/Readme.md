@@ -20,23 +20,15 @@ G = \frac{1}{16} \begin{bmatrix}
 \end{bmatrix}
 $$
 
-$$
-\frac{1}{16} \begin{bmatrix} 
-1 & 2 & 1 \\ 
-2 & 4 & 2 \\ 
-1 & 2 & 1 
-\end{bmatrix}
-$$
-
 This step ensures that only significant edges remain in the processed image.
 
 ### **Step 2: Apply Derivative Filtering**
 ## Understanding Image Gradients
 An image gradient measures the rate of change in pixel intensities across an image. The gradient is computed using partial derivatives in the **x-direction (horizontal)** and **y-direction (vertical)**:
 
-\[
+$$
 G_x = \frac{\partial I}{\partial x}, \quad G_y = \frac{\partial I}{\partial y}
-\]
+$$
 
 where:
 - \( G_x \) represents changes in intensity along the horizontal axis.
@@ -44,9 +36,9 @@ where:
 - \( I \) is the input image.
 
 The magnitude of the gradient is computed as:
-\[
+$$
 G = \sqrt{G_x^2 + G_y^2}
-\]
+$$
 This measures the strength of edges in the image.
 
 ## Derivative Filters
