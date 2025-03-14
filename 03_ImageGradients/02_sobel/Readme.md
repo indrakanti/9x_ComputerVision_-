@@ -38,9 +38,10 @@ where:
 - \( G \) is the overall **gradient magnitude**, which represents edge strength.
 
 The **direction** of the edge is given by:
-\[
+$$
 \theta = \tan^{-1} \left(\frac{G_y}{G_x}\right)
-\]
+$$
+
 This tells us the orientation of the edge.
 
 ### **Sobel Operator Kernels**
