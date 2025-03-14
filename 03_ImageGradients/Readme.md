@@ -78,8 +78,8 @@ These filters compute the second derivative of an image, which highlights change
 #### **Laplacian Operator**
 $$
 L = \begin{bmatrix} 
-0 & 1 & 0 \\ 
-1 & -4 & 1 \\ 
+0 & 1 & 0 \\
+1 & -4 & 1 \\
 0 & 1 & 0 
 \end{bmatrix}
 $$
