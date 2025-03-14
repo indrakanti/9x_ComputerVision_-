@@ -33,9 +33,9 @@ G = $`\sqrt{G_x^2 + G_y^2}`$
 
 
 where:
-- $`\( G_x \)`$ is the gradient in the **horizontal direction**.
-- \( G_y \) is the gradient in the **vertical direction**.
-- \( G \) is the overall **gradient magnitude**, which represents edge strength.
+- $`( G_x )`$ is the gradient in the **horizontal direction**.
+- $`( G_y )`$ is the gradient in the **vertical direction**.
+- $`( G  )`$ is the overall **gradient magnitude**, which represents edge strength.
 
 The **direction** of the edge is given by:
 $` \theta = \tan^{-1} \left(\frac{G_y}{G_x}\right)`$
@@ -45,17 +45,18 @@ This tells us the orientation of the edge.
 ### **Sobel Operator Kernels**
 The Sobel filter uses **two 3×3 convolution kernels** to compute gradients:
 1. **Horizontal Gradient Kernel (\( G_x \))**
-   \[
+
+$$
    G_x =
    \begin{bmatrix}
    -1 & 0 & +1 \\
    -2 & 0 & +2 \\
    -1 & 0 & +1
    \end{bmatrix}
-   \]
+$$
    - This kernel detects **vertical edges** by calculating intensity differences from left to right.
 
-2. **Vertical Gradient Kernel (\( G_y \))**
+1. **Vertical Gradient Kernel (\( G_y \))**
    \[
    G_y =
    \begin{bmatrix}
