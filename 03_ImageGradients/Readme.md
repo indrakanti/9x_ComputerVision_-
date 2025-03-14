@@ -76,9 +76,13 @@ The Sobel filter applies a weighted difference to pixels, emphasizing edge stren
 These filters compute the second derivative of an image, which highlights changes in gradient intensity. A common second-order filter is:
 
 #### **Laplacian Operator**
-\[
-L = \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{bmatrix}
-\]
+$$
+L = \begin{bmatrix} 
+0 & 1 & 0 \\ 
+1 & -4 & 1 \\ 
+0 & 1 & 0 
+\end{bmatrix}
+$$
 This filter detects edges regardless of direction by capturing areas where the gradient changes abruptly.
 
 ## Applications of Derivative Filters
