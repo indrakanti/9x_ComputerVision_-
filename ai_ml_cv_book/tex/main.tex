@@ -1,0 +1,141 @@
+%====================================================================
+% WORKING MAIN FILE FOR THE BOOK
+%====================================================================
+\documentclass[11pt,oneside]{book}
+
+%--------------------------------------------------------------------
+% PACKAGES
+%--------------------------------------------------------------------
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+%--------------------------------------------------------------------
+% COLORS AND HYPERLINKS
+%--------------------------------------------------------------------
+\definecolor{linkcolor}{RGB}{0,70,150}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    citecolor=linkcolor,
+    urlcolor=linkcolor
+}
+
+%--------------------------------------------------------------------
+% CODE LISTINGS SETUP
+%--------------------------------------------------------------------
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{orange},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=8pt,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
+  captionpos=b
+}
+
+%--------------------------------------------------------------------
+% WORKING TITLE (change later when we finalize)
+%--------------------------------------------------------------------
+\title{\Huge \bfseries Working Title:\\[0.4em]
+\Large Engineering Math, AI--ML, and Computer Vision\\[1em]
+\large \textit{(Draft --- Title to be finalized)}}
+\author{\Large Rama Kiran Kumar Indrakanti}
+\date{\today}
+
+%====================================================================
+\begin{document}
+%====================================================================
+
+\frontmatter
+\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+
+\include{preface}  % optional; comment out if not ready
+
+%====================================================================
+% MAIN CONTENT
+%====================================================================
+\mainmatter
+
+%--------------------------------------------------
+% PART I – Foundations of Intelligent Vision
+%--------------------------------------------------
+\part{Foundations of Intelligent Vision}
+
+\include{chapters/ch00_overview}              % Chapter 0 – Foundations Overview
+\include{chapters/ch01_math_of_seeing}        % Chapter 1 – The Mathematics of Seeing
+\include{chapters/ch02_physics_perception}    % Chapter 2 – The Physics and Perception of Vision
+\include{chapters/ch03_equations_to_algorithms} % Chapter 3 – From Equations to Algorithms
+\include{chapters/ch04_computational_pipeline}  % Chapter 4 – Building the Computational Pipeline
+
+%--------------------------------------------------
+% PART II – Learning from Data
+%--------------------------------------------------
+\part{Learning from Data}
+
+\include{chapters/ch05_feature_learning}      % Chapter 5 – Learning in the Feature Space
+\include{chapters/ch06_inference}             % Chapter 6 – Vision as Inference
+
+%--------------------------------------------------
+% PART III – Deep Learning for Vision
+%--------------------------------------------------
+\part{Deep Learning for Vision}
+
+\include{chapters/ch07_cnns}                  % Chapter 7 – Convolutional Intelligence
+\include{chapters/ch08_detection_segmentation} % Chapter 8 – Detect, Segment, and Understand
+
+%--------------------------------------------------
+% PART IV – Advanced and Frontier Topics
+%--------------------------------------------------
+\part{Advanced and Frontier Topics}
+
+\include{chapters/ch09_fusion_edge}           % Chapter 9 – Fusion, Efficiency, and Edge AI
+\include{chapters/ch10_frontier_transformers} % Chapter 10 – The Frontier of Vision: Transformers and Beyond
+
+%--------------------------------------------------
+% PART V – Engineering Labs and Real-World Systems
+%--------------------------------------------------
+\part{Engineering Labs and Real-World Systems}
+
+\include{chapters/ch11_projects}              % Chapter 11 – Applied Projects in Modern Vision Systems
+
+%====================================================================
+% APPENDICES
+%====================================================================
+\appendix
+
+\include{chapters/appendix_math}              % Appendix A – Mathematical Primer (to create)
+\include{chapters/appendix_python}            % Appendix B – Python/C++ Conventions (to create)
+\include{chapters/appendix_datasets}          % Appendix C – Datasets and Benchmarks (to create)
+\include{chapters/appendix_tools}             % Appendix D – Tools & Git Repos (to be written later)
+
+%====================================================================
+% BIBLIOGRAPHY
+%====================================================================
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+%====================================================================
+\end{document}
+%====================================================================
