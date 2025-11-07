@@ -1,0 +1,123 @@
+\chapter{Foundations Overview: Seeing Before Understanding}
+
+\section*{Prelude}
+
+Every intelligent system begins with a simple act: it looks at the world and tries to make sense of what it sees.  
+Before there is classification or prediction, before learning and inference, there is \textit{perception}.  
+Perception transforms energy into information, information into structure, and structure into understanding.
+
+This chapter sets the conceptual stage for the rest of the book.  
+It is not about formulas yet—but about the journey that links light, mathematics, and intelligence.  
+The goal is to give engineers and researchers a single, unifying map of the entire field:
+\[
+\text{Light} \;\longrightarrow\; \text{Signal} \;\longrightarrow\; \text{Mathematics} 
+\;\longrightarrow\; \text{Vision Algorithms} \;\longrightarrow\; \text{AI and ML}.
+\]
+
+\section{Why Study Vision through Mathematics}
+
+Computer vision is often introduced through code or networks, but at its heart, it is an engineering science governed by mathematics.  
+Every pixel is a numerical measurement; every operation—filtering, detection, learning—is a transformation in some mathematical space.
+
+Mathematics gives us three essential advantages:
+
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Precision:} Equations describe exactly what an algorithm does, independent of implementation.  
+  \item \textbf{Universality:} The same math applies to lenses, LiDAR, or neural layers.  
+  \item \textbf{Optimization:} Once expressed mathematically, a system can be analyzed, tuned, or learned.
+\end{enumerate}
+
+This book therefore begins not with a dataset, but with light and geometry—the physical truths from which all vision emerges.
+
+\section{The Photon-to-Function Chain}
+
+To understand perception, we follow the energy flow from the physical world into computation:
+
+\begin{itemize}
+  \item \textbf{Light:} Electromagnetic radiation carrying energy.  
+  \item \textbf{Interaction:} Light reflects, refracts, and diffuses from surfaces.  
+  \item \textbf{Sensing:} Optics and detectors convert that energy into electrical signals.  
+  \item \textbf{Sampling:} Electronics digitize signals into arrays of numbers—images.  
+  \item \textbf{Modeling:} Mathematics interprets these numbers as geometry, motion, and identity.  
+  \item \textbf{Learning:} AI systems map patterns of numbers to meaning and decision.
+\end{itemize}
+
+At each stage, information is conserved or lost.  
+Understanding those transitions—what is captured, what is approximated, what is discarded—is what makes an engineer capable of building reliable perception systems.
+
+\section{From Physics to Perception}
+
+Physics provides the grammar of vision.  
+Radiometry defines how energy propagates; optics define how images form; and sensors impose limits through noise, quantization, and dynamic range.  
+Every engineer working in AI or ML for vision must respect these physical boundaries.  
+Learning algorithms are only as good as the data they are trained on, and data is shaped by sensors and light.
+
+The physical perspective answers questions such as:
+\begin{itemize}
+  \item Why do cameras saturate under sunlight?  
+  \item What does ``dynamic range'' actually mean mathematically?  
+  \item How does exposure affect the gradients used by a neural network?  
+\end{itemize}
+
+These are not theoretical curiosities—they determine whether a model succeeds in the field.
+
+\section{From Geometry to Computation}
+
+Geometry is the bridge from light to structure.  
+A three-dimensional world must be projected onto two-dimensional sensors.  
+Matrices express these transformations compactly:
+\[
+s
+\begin{bmatrix}
+x \\ y \\ 1
+\end{bmatrix}
+=
+K [R|t]
+\begin{bmatrix}
+X \\ Y \\ Z \\ 1
+\end{bmatrix}.
+\]
+Here \(K\) contains the camera’s intrinsic parameters, and \([R|t]\) its position and orientation.  
+This single equation powers calibration, stereo vision, and 3-D reconstruction.
+
+Computation then turns geometry into operations—convolutions, gradients, filters, and transforms—implemented in code but grounded in algebra.  
+Each algorithm is a small piece of applied mathematics running at the speed of silicon.
+
+\section{From Computation to Intelligence}
+
+Artificial intelligence begins when these computations form hierarchies.  
+Edges become shapes, shapes become objects, and objects connect to context.  
+Machine learning formalizes this hierarchy through optimization:
+\[
+\min_\theta \; E(\theta) = \sum_i \| y_i - f(x_i;\theta) \|^2.
+\]
+The same principle that fits a line to data in Chapter~1 also trains a deep network in Chapter~7.  
+The difference is scale, not philosophy.
+
+\section{How to Read the Foundations}
+
+Each chapter in Part~I follows a consistent rhythm:
+
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Concept} – physical or mathematical principle.  
+  \item \textbf{Theory} – key equations and derivations.  
+  \item \textbf{Implementation} – algorithms or code examples.  
+  \item \textbf{Visualization} – figures and plots to make ideas tangible.  
+  \item \textbf{Discussion} – engineering insights and limitations.  
+\end{enumerate}
+
+Readers can approach sequentially or jump directly to the sections that match their projects.  
+Every formula connects to a simulation; every simulation connects to an experiment.
+
+\section{From Foundations to Practice}
+
+By the end of Part~I, the reader will have constructed a mental framework strong enough to connect photons to neural activations.  
+Later parts—on learning, deep networks, and embedded deployment—will reuse these principles continuously.  
+
+The goal is not just to understand algorithms, but to \textit{engineer perception}:  
+systems that see accurately, robustly, and responsibly in the real world.
+
+\vspace{1em}
+\noindent
+\textbf{Next:} Chapter~1 explores the measurable nature of light—the first quantity every perception system must capture and compute.
+
