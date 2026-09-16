@@ -25,9 +25,9 @@ The course is designed for engineers who want more than API-level OpenCV example
 
 | Module | Topic | Status |
 |---|---|---|
-| 00 | Course setup: Linux, C++, OpenCV, CMake, repo workflow | Planned |
+| 00 | Course setup: Linux, C++, OpenCV, CMake, repo workflow | Build foundation complete; lesson planned |
 | 01 | Light, cameras, pixels, sampling, quantization, color spaces | Existing material; reorganize |
-| 02 | Point operations: brightness, contrast, inversion, gamma, thresholding | Existing |
+| 02 | Point operations: brightness, contrast, inversion, gamma, thresholding | **Video-ready reference lesson** |
 | 03 | Linear filtering and convolution: box and Gaussian filters | Existing |
 | 04 | Image pyramids and multi-scale processing | Expand |
 
@@ -137,11 +137,9 @@ A lesson is complete when it has:
 
 ## Repository Modernization Work
 
-The following infrastructure work should be completed alongside the course:
-
-1. Add a top-level CMake build.
+1. **Done:** add a top-level CMake build.
 2. Standardize naming and fix spelling/casing inconsistencies.
-3. Add CI to compile representative C++ examples.
+3. **Done:** add CI to compile the C++ examples and run lesson tests.
 4. Add formatting/static-analysis configuration.
 5. Add a license selected by the repository owner.
 6. Add contribution guidelines.
