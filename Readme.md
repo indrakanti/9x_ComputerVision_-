@@ -17,6 +17,8 @@ Python examples are included where they improve accessibility or make comparison
 
 - [Complete Course Roadmap](COURSE_ROADMAP.md)
 - [YouTube Video Series and Link Index](VIDEO_SERIES.md)
+- [Linux Build Guide](BUILDING.md)
+- [Lesson Authoring Guide](LESSON_GUIDE.md)
 
 The video index is designed so every published YouTube lesson can link directly to its corresponding theory, source code, commands, and exercises in this repository.
 
@@ -61,16 +63,40 @@ That final question is an important part of the 9x Computer Vision direction.
 
 ## Build Environment
 
-The examples target Linux and use OpenCV. Existing lessons currently use local Makefiles in several directories. A top-level CMake build and CI are planned as part of the course modernization work.
+The C++ examples target Linux, C++17, and OpenCV 4. A top-level CMake build is the canonical build path.
 
 Typical dependencies on Ubuntu are:
 
 ```bash
 sudo apt update
-sudo apt install build-essential cmake pkg-config libopencv-dev
+sudo apt install -y build-essential cmake pkg-config libopencv-dev
 ```
 
-Exact build instructions remain inside each lesson until the unified build is introduced.
+Configure and build all current C++ lessons from the repository root:
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel
+```
+
+Build a single lesson by its stable target name:
+
+```bash
+cmake --build build --target cv9x_sobel
+cmake --build build --target cv9x_sift_config_match
+```
+
+See [BUILDING.md](BUILDING.md) for debug builds, warnings-as-errors, runtime notes, and the migration policy for legacy Makefiles.
+
+Pull requests and pushes to `main` are compiled on Ubuntu through GitHub Actions so build regressions can be caught before course material is published.
+
+## Repository Naming and Lesson Structure
+
+Some early lesson directories contain legacy spelling or naming inconsistencies. Those paths are kept temporarily so linked images and lesson references are not broken during the build modernization.
+
+New lessons use normalized names and stable CMake targets. In particular, course-facing build targets use the correct **SIFT** terminology even where a legacy path currently contains `SHIFT`.
+
+See [LESSON_GUIDE.md](LESSON_GUIDE.md) for the standard lesson layout and definition of done.
 
 ## Course Stages
 
@@ -109,7 +135,9 @@ Results + exercises
 
 Contributions that improve explanations, fix code, add tests, create useful visualizations, or provide portable build support are welcome.
 
-A formal contribution guide and repository license are still to be added.
+New or modernized lessons should follow [LESSON_GUIDE.md](LESSON_GUIDE.md) and build through the top-level CMake project.
+
+A repository license still needs to be selected before the project is presented as a fully reusable open-source course.
 
 ## Course Philosophy
 
