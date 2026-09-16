@@ -18,6 +18,8 @@ find_package(OpenCV 4 REQUIRED COMPONENTS
     highgui
     features2d)
 
+include(CTest)
+
 function(add_cv9x_example target source)
     add_executable(${target} "${source}")
     target_include_directories(${target} PRIVATE ${OpenCV_INCLUDE_DIRS})
@@ -45,6 +47,12 @@ endfunction()
 # 02 - Image filtering
 add_cv9x_example(cv9x_point_filter
     "02_ImageFiltering/01_PointFiltering/03_TransformationInCpp/pointfiltering.cpp")
+
+if(BUILD_TESTING)
+    add_test(NAME cv9x_point_filter_self_test
+        COMMAND cv9x_point_filter --self-test)
+endif()
+
 add_cv9x_example(cv9x_box_filter
     "02_ImageFiltering/02_LinearFiltering/02_BoxFilter/boxfilter.cpp")
 add_cv9x_example(cv9x_gaussian_2d
