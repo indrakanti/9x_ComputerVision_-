@@ -1,79 +1,118 @@
-# Computer Vision Learn and Learn from sharing
+# 9x Computer Vision
 
-![9X Logo](9xLogo.webp)
-## Overview
-This series aims to provide a structured understanding of computer vision, starting from fundamental concepts and gradually building up to more advanced techniques. Each topic will be covered in three parts:
+## Computer Vision from First Principles to Production C++ on Linux
 
-1. **Theory** – Understanding the mathematical and physical principles behind the concept.
-2. **Code Implementation** – Practical coding examples in C++ (and Python if time permits).
-3. **Results and Visualization** – Demonstrating the outputs through programmatically generated diagrams, plots, and images.
+9x Computer Vision is an open learning series for engineers who want to understand **how computer vision works**, not only how to call an OpenCV API.
 
-## Topics Covered
-A folder for fundamentals is available to know what is light to camera to images.
+Each lesson connects four layers:
 
-1. **What is Computer Vision?**
-   - Introduction to the field of computer vision.
-   - Real-world applications and use cases.
-   - How machines perceive and interpret images.
+1. **Theory and mathematics** — the physical or mathematical idea behind the algorithm.
+2. **C++ implementation** — practical code on Linux, primarily using OpenCV.
+3. **Visualization** — intermediate steps, output images, and parameter effects.
+4. **Engineering** — performance, memory behavior, failure cases, testing, and deployment considerations.
 
-2. **Filtering**
-   - Concept of image filtering and convolution.
-   - Low-pass and high-pass filters.
-   - Implementation using kernels in C++.
+Python examples are included where they improve accessibility or make comparison useful, but the primary engineering track is C++.
 
-3. **Gaussian Filtering**
-   - Understanding Gaussian blur and its importance.
-   - Mathematical formulation.
-   - Implementation in C++.
+## Course Resources
 
-4. **Pyramids**
-   - Image pyramids: Gaussian and Laplacian pyramids.
-   - Downsampling and upsampling techniques.
-   - Use cases in multi-scale image processing.
+- [Complete Course Roadmap](COURSE_ROADMAP.md)
+- [YouTube Video Series and Link Index](VIDEO_SERIES.md)
 
-5. **Image Gradients**
-   - Gradient computation and edge direction.
-   - Sobel and Scharr operators.
-   - Application in edge detection.
+The video index is designed so every published YouTube lesson can link directly to its corresponding theory, source code, commands, and exercises in this repository.
 
-6. **Image Derivatives**
-   - First and second-order derivatives.
-   - Partial derivatives and their role in edge detection.
-   - Implementing derivative operators in C++.
+## Current Repository Content
 
-7. **Edge Detection**
-   - Canny edge detector and its working principle.
-   - Hysteresis thresholding and non-maximum suppression.
-   - Real-world applications of edge detection.
+The repository already contains material covering:
 
-8. **Object Detection**
-   - Difference between object detection and classification.
-   - Classical approaches (Haar cascades, HOG+SVM) vs. modern deep learning methods.
-   - Implementing basic object detection in C++.
+- image formation / computer-vision fundamentals
+- point filtering and intensity transformations
+- linear filtering and Gaussian filtering
+- image gradients
+- image blending
+- derivatives and edge detection
+- feature detection
+- SIFT concepts and implementation exercises
 
-9. **Object Classification**
-   - Introduction to feature extraction and classification.
-   - Support Vector Machines (SVM), k-NN, and deep learning-based classification.
-   - Code examples for implementing classification models.
+The roadmap extends this foundation into:
 
-10. **CNN (Just a Sneak Peek)**
-   - A brief introduction to Convolutional Neural Networks.
-   - Understanding convolution layers, pooling, and activation functions.
-   - Placeholder for potential deeper dives into CNNs in the future.
+- feature matching and geometric verification
+- homography and projective geometry
+- camera calibration
+- stereo vision and depth
+- optical flow and tracking
+- classical object detection and classification
+- CNNs, ONNX inference, object detection, segmentation, and pose
+- production C++ topics such as memory ownership, benchmarking, multithreading, zero-copy concepts, real-time considerations, testing, and deployment
+- end-to-end projects and a capstone perception pipeline
 
-11. **Camera Calibration (Basics Only)**
-   - Understanding intrinsic and extrinsic parameters.
-   - How calibration corrects lens distortions.
-   - Implementing basic calibration using a checkerboard pattern.
+## Learning Pattern
 
-## Code and Implementation Details
-- All implementations will be in **C++**, ensuring performance and efficiency.
-- If time permits, Python versions will be provided for easier accessibility.
-- OpenCV will be the primary library used for image processing and visualization.
-- Mathematical explanations will be provided using **LaTeX**.
-- All diagrams and visualizations will be **programmatically generated**.
+A completed lesson should answer four questions:
 
-## Stay Tuned
-This series will be structured to gradually build your knowledge of computer vision from scratch. Whether you're a beginner or someone looking to refine your understanding, this learning path will provide deep insights into the mechanics of vision-based systems.
+> **What is happening mathematically?**
+>
+> **How do I implement it in C++?**
+>
+> **How do I prove the output is correct?**
+>
+> **What changes when I put it into a real-time or embedded vision system?**
 
-🚀 Let's dive into the world of computer vision!
+That final question is an important part of the 9x Computer Vision direction.
+
+## Build Environment
+
+The examples target Linux and use OpenCV. Existing lessons currently use local Makefiles in several directories. A top-level CMake build and CI are planned as part of the course modernization work.
+
+Typical dependencies on Ubuntu are:
+
+```bash
+sudo apt update
+sudo apt install build-essential cmake pkg-config libopencv-dev
+```
+
+Exact build instructions remain inside each lesson until the unified build is introduced.
+
+## Course Stages
+
+| Stage | Focus |
+|---|---|
+| v0.1 | Classical vision foundations |
+| v0.2 | Geometry, cameras, calibration, stereo |
+| v0.3 | Recognition and tracking |
+| v0.4 | Deep computer vision |
+| v0.5 | Production C++ vision on Linux |
+| v1.0 | Complete course + projects + capstone |
+
+See [COURSE_ROADMAP.md](COURSE_ROADMAP.md) for the module-by-module plan.
+
+## YouTube Integration
+
+Every lesson will have a corresponding entry in [VIDEO_SERIES.md](VIDEO_SERIES.md). When a video is published, its URL can be added to the table so GitHub and YouTube become two views of the same course:
+
+```text
+YouTube lesson
+      |
+      v
+Theory + diagrams
+      |
+      v
+C++ source code
+      |
+      v
+Build / run commands
+      |
+      v
+Results + exercises
+```
+
+## Contributions
+
+Contributions that improve explanations, fix code, add tests, create useful visualizations, or provide portable build support are welcome.
+
+A formal contribution guide and repository license are still to be added.
+
+## Course Philosophy
+
+This repository should not become a collection of OpenCV one-liners.
+
+The goal is to help an engineer understand a vision algorithm from **light and pixels**, through **math and implementation**, all the way to **runtime behavior and deployment**.
