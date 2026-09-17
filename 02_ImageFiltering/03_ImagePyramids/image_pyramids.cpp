@@ -1,8 +1,10 @@
 #include <opencv2/opencv.hpp>
 
+#include <algorithm>
 #include <cmath>
 #include <filesystem>
 #include <iostream>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
