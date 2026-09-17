@@ -29,7 +29,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 | 01 | Light, cameras, pixels, sampling, quantization, color spaces | Existing material; reorganize |
 | 02 | Point operations: brightness, contrast, inversion, gamma, thresholding | **Video-ready reference lesson** |
 | 03 | Linear filtering and convolution: manual convolution, box and Gaussian filters | **Video-ready: convolution + box/Gaussian** |
-| 04 | Image pyramids and multi-scale processing | Expand |
+| 04 | Image pyramids and multi-scale processing | **Video-ready: Gaussian + Laplacian + reconstruction** |
 
 ### Part II — Gradients, Edges, and Features
 
