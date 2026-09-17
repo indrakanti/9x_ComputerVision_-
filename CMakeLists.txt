@@ -47,13 +47,19 @@ add_cv9x_example(cv9x_convolution
 add_cv9x_example(cv9x_point_filter
     "02_ImageFiltering/01_PointFiltering/03_TransformationInCpp/pointfiltering.cpp")
 
+add_cv9x_example(cv9x_linear_filtering
+    "02_ImageFiltering/02_LinearFiltering/00_BoxVsGaussian/linear_filtering.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
     add_test(NAME cv9x_point_filter_self_test
         COMMAND cv9x_point_filter --self-test)
+    add_test(NAME cv9x_linear_filtering_self_test
+        COMMAND cv9x_linear_filtering --self-test)
 endif()
 
+# Legacy focused examples retained while their lessons are migrated.
 add_cv9x_example(cv9x_box_filter
     "02_ImageFiltering/02_LinearFiltering/02_BoxFilter/boxfilter.cpp")
 add_cv9x_example(cv9x_gaussian_2d
