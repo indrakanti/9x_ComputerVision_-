@@ -34,7 +34,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 02 | Image Brightness, Contrast, Gamma & Thresholding from First Principles | [lesson + recording script](02_ImageFiltering/01_PointFiltering/VIDEO.md) | TBD |
 | 03 | Convolution Explained Visually — The Core Operation of Computer Vision | [lesson + recording script](02_ImageFiltering/00_ConvolutionFirstPrinciples/VIDEO.md) | TBD |
 | 04 | Box Filter vs Gaussian Filter — Math, C++ and Real Results | [lesson + recording script](02_ImageFiltering/02_LinearFiltering/00_BoxVsGaussian/VIDEO.md) | TBD |
-| 05 | Image Pyramids — Why Multi-Scale Vision Works | image-filtering/pyramid material | TBD |
+| 05 | Image Pyramids Explained in C++ — Gaussian, Laplacian, Aliasing & Reconstruction | [lesson + recording script](02_ImageFiltering/03_ImagePyramids/VIDEO.md) | TBD |
 | 06 | Sobel & Scharr Image Gradients in C++ | `03_ImageGradients/` | TBD |
 | 07 | Image Derivatives — What Edges Really Are | `05_DerivativesEdgeDetection/` | TBD |
 | 08 | Canny Edge Detection from Scratch: NMS + Hysteresis | `05_DerivativesEdgeDetection/` | TBD |
