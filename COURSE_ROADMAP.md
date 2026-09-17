@@ -28,7 +28,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 | 00 | Course setup: Linux, C++, OpenCV, CMake, repo workflow | Build foundation complete; lesson planned |
 | 01 | Light, cameras, pixels, sampling, quantization, color spaces | Existing material; reorganize |
 | 02 | Point operations: brightness, contrast, inversion, gamma, thresholding | **Video-ready reference lesson** |
-| 03 | Linear filtering and convolution: box and Gaussian filters | Existing |
+| 03 | Linear filtering and convolution: manual convolution, box and Gaussian filters | **Convolution recording-ready; box/Gaussian next** |
 | 04 | Image pyramids and multi-scale processing | Expand |
 
 ### Part II — Gradients, Edges, and Features

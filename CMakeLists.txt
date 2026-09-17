@@ -38,17 +38,18 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 # Classical vision lessons currently present in the repository.
-#
-# Target names are intentionally stable and independent of the legacy directory
-# spelling. Directory renames can therefore happen later without changing the
-# commands students use to build individual examples.
 # -----------------------------------------------------------------------------
 
 # 02 - Image filtering
+add_cv9x_example(cv9x_convolution
+    "02_ImageFiltering/00_ConvolutionFirstPrinciples/convolution.cpp")
+
 add_cv9x_example(cv9x_point_filter
     "02_ImageFiltering/01_PointFiltering/03_TransformationInCpp/pointfiltering.cpp")
 
 if(BUILD_TESTING)
+    add_test(NAME cv9x_convolution_self_test
+        COMMAND cv9x_convolution --self-test)
     add_test(NAME cv9x_point_filter_self_test
         COMMAND cv9x_point_filter --self-test)
 endif()
