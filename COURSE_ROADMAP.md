@@ -35,7 +35,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 
 | Module | Topic | Status |
 |---|---|---|
-| 05 | Image gradients: Sobel, Scharr, magnitude, direction | Existing |
+| 05 | Image gradients: Sobel, Scharr, magnitude, direction | **Video-ready: signed gradients + magnitude/direction** |
 | 06 | Derivatives and edge detection: Laplacian, Canny, NMS, hysteresis | Existing / expand |
 | 07 | Feature detection: Harris, Shi-Tomasi, FAST | Existing / expand |
 | 08 | Feature descriptors: SIFT, ORB, BRIEF | SIFT existing; ORB/BRIEF planned |
