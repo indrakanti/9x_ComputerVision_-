@@ -82,17 +82,17 @@ Show that the derivative becomes large around the transition.
 
 Connect to Episode 06:
 
-[
+$
 M = \sqrt{G_x^2 + G_y^2}
-]
+$
 
 ### 04:00 — Threshold magnitude
 
 Write:
 
-[
+$
 M \ge T \Rightarrow \text{edge candidate}
-]
+$
 
 Explain that this makes an edge map but does not thin edges or reason about connectivity.
 
@@ -108,19 +108,19 @@ Explain that the sign transition is useful evidence of an edge location.
 
 Write:
 
-[
+$
 \nabla^2 I = I_{xx}+I_{yy}
-]
+$
 
 Show the 4-neighbor kernel:
 
-[
+$
 \begin{bmatrix}
 0&1&0\\
 1&-4&1\\
 0&1&0
 end{bmatrix}
-]
+$
 
 Then show that the self-test validates this kernel against `cv::Laplacian(..., ksize=1)`.
 
