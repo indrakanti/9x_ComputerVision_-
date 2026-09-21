@@ -56,6 +56,9 @@ add_cv9x_example(cv9x_image_pyramids
 add_cv9x_example(cv9x_gradients
     "03_ImageGradients/00_SobelScharr/gradients.cpp")
 
+add_cv9x_example(cv9x_edge_derivatives
+    "05_DerivativesEdgeDetection/00_DerivativesAndEdges/edge_derivatives.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -67,6 +70,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_image_pyramids --self-test)
     add_test(NAME cv9x_gradients_self_test
         COMMAND cv9x_gradients --self-test)
+    add_test(NAME cv9x_edge_derivatives_self_test
+        COMMAND cv9x_edge_derivatives --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
