@@ -36,7 +36,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 04 | Box Filter vs Gaussian Filter — Math, C++ and Real Results | [lesson + recording script](02_ImageFiltering/02_LinearFiltering/00_BoxVsGaussian/VIDEO.md) | TBD |
 | 05 | Image Pyramids Explained in C++ — Gaussian, Laplacian, Aliasing & Reconstruction | [lesson + recording script](02_ImageFiltering/03_ImagePyramids/VIDEO.md) | TBD |
 | 06 | Sobel & Scharr Image Gradients in C++ — Magnitude, Direction & Signed Derivatives | [lesson + recording script](03_ImageGradients/00_SobelScharr/VIDEO.md) | TBD |
-| 07 | Image Derivatives — What Edges Really Are | `05_DerivativesEdgeDetection/` | TBD |
+| 07 | Image Derivatives & Edge Detection — Sobel, Laplacian and Zero Crossings | [lesson + recording script](05_DerivativesEdgeDetection/00_DerivativesAndEdges/VIDEO.md) | TBD |
 | 08 | Canny Edge Detection from Scratch: NMS + Hysteresis | `05_DerivativesEdgeDetection/` | TBD |
 | 09 | Corner Detection — Harris, Shi-Tomasi and FAST | `06_FeatureDetection/` | TBD |
 | 10 | SIFT Part 1 — Scale Space and Difference of Gaussians | `07_SIFT/` | TBD |
