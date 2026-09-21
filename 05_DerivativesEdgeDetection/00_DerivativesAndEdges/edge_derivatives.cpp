@@ -395,8 +395,10 @@ int main(int argc, char** argv) {
     ok &= writeImage(output_dir / "gradient_edges.png", result.gradient_edges);
     ok &= writeImage(output_dir / "laplacian_signed.png",
                      visualizeSigned(result.laplacian));
+    cv::Mat laplacian_absolute;
+    cv::absdiff(result.laplacian, cv::Scalar(0), laplacian_absolute);
     ok &= writeImage(output_dir / "laplacian_absolute.png",
-                     visualizeNonNegative(cv::abs(result.laplacian)));
+                     visualizeNonNegative(laplacian_absolute));
     ok &= writeImage(output_dir / "laplacian_zero_crossings.png",
                      result.zero_crossings);
 
