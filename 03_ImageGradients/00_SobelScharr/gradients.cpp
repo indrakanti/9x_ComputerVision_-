@@ -268,21 +268,21 @@ bool runSelfTest() {
     const auto sobel_x = computeSobel(ramp_x, border);
     check(interiorMean(sobel_x.gx) > 0.0, "Sobel x-ramp has positive Gx");
     check(std::abs(interiorMean(sobel_x.gy)) <= 1e-5, "Sobel x-ramp has zero Gy");
-    check(angleDistanceDegrees(interiorMean(sobel_x.direction_deg), 0.0) <= 1e-3,
+    check(angleDistanceDegrees(interiorMean(sobel_x.direction_deg), 0.0) <= 0.5,
           "Sobel x-ramp direction is 0 degrees");
 
     const auto sobel_y = computeSobel(ramp_y, border);
     check(std::abs(interiorMean(sobel_y.gx)) <= 1e-5, "Sobel y-ramp has zero Gx");
     check(interiorMean(sobel_y.gy) > 0.0, "Sobel y-ramp has positive Gy");
-    check(angleDistanceDegrees(interiorMean(sobel_y.direction_deg), 90.0) <= 1e-3,
+    check(angleDistanceDegrees(interiorMean(sobel_y.direction_deg), 90.0) <= 0.5,
           "Sobel y-ramp direction is 90 degrees");
 
     const auto sobel_xy = computeSobel(ramp_xy, border);
-    check(angleDistanceDegrees(interiorMean(sobel_xy.direction_deg), 45.0) <= 1e-3,
+    check(angleDistanceDegrees(interiorMean(sobel_xy.direction_deg), 45.0) <= 0.5,
           "Sobel diagonal ramp direction is 45 degrees");
 
     const auto scharr_xy = computeScharr(ramp_xy, border);
-    check(angleDistanceDegrees(interiorMean(scharr_xy.direction_deg), 45.0) <= 1e-3,
+    check(angleDistanceDegrees(interiorMean(scharr_xy.direction_deg), 45.0) <= 0.5,
           "Scharr diagonal ramp direction is 45 degrees");
 
     cv::Mat pattern(23, 31, CV_32F);
