@@ -33,21 +33,21 @@ You should be able to:
 
 Consider a one-dimensional intensity profile containing a dark-to-bright step.
 
-The image intensity (I(x)) changes rapidly around the transition.
+The image intensity $I(x)$ changes rapidly around the transition.
 
 The first derivative
 
-[
+$
 \frac{dI}{dx}
-]
+$
 
 produces a strong peak at the transition.
 
 The second derivative
 
-[
+$
 \frac{d^2I}{dx^2}
-]
+$
 
 produces positive and negative lobes, with a sign transition near the edge.
 
@@ -60,19 +60,19 @@ That gives us two common edge ideas:
 
 From the previous lesson:
 
-[
+$
 M = \sqrt{G_x^2 + G_y^2}
-]
+$
 
 A simple edge detector is:
 
-[
+$
 E(x,y) =
 \begin{cases}
 255, & M(x,y) \ge T \\
 0, & M(x,y) < T
 \end{cases}
-]
+$
 
 This is intentionally simple.
 
@@ -88,22 +88,22 @@ Those are the reasons Canny produces thinner and better-connected edges.
 
 The continuous Laplacian is
 
-[
+$
 \nabla^2 I =
 \frac{\partial^2 I}{\partial x^2}
 +
 \frac{\partial^2 I}{\partial y^2}
-]
+$
 
 A common 4-neighbor discrete approximation is:
 
-[
+$
 \begin{bmatrix}
 0 & 1 & 0 \\
 1 & -4 & 1 \\
 0 & 1 & 0
 \end{bmatrix}
-]
+$
 
 This lesson uses `cv::Laplacian(..., ksize=1)` and verifies that it matches this explicit kernel.
 
@@ -144,9 +144,9 @@ That means derivatives can respond strongly to noise even when the underlying im
 
 The pipeline therefore supports Gaussian smoothing:
 
-[
+$
 I_s = G_\sigma * I
-]
+$
 
 followed by differentiation.
 
