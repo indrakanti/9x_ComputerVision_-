@@ -223,7 +223,7 @@ cv::Mat doubleThreshold(const cv::Mat& nms,
             const float value = nms.at<float>(row, col);
             if (value >= high_threshold) {
                 labels.at<unsigned char>(row, col) = kStrong;
-            } else if (value >= low_threshold) {
+            } else if (value > 0.0f && value >= low_threshold) {
                 labels.at<unsigned char>(row, col) = kWeak;
             }
         }
@@ -352,15 +352,15 @@ double maxAbsDifference(const cv::Mat& a, const cv::Mat& b) {
 
 int countValue(const cv::Mat& input, unsigned char value) {
     cv::Mat mask;
-    cv::compare(input, value, mask, cv::CMP_EQ);
+    cv::compare(input, cv::Scalar(value), mask, cv::CMP_EQ);
     return cv::countNonZero(mask);
 }
 
 double binaryIoU(const cv::Mat& a, const cv::Mat& b) {
     cv::Mat a_mask;
     cv::Mat b_mask;
-    cv::compare(a, 0, a_mask, cv::CMP_GT);
-    cv::compare(b, 0, b_mask, cv::CMP_GT);
+    cv::compare(a, cv::Scalar(0), a_mask, cv::CMP_GT);
+    cv::compare(b, cv::Scalar(0), b_mask, cv::CMP_GT);
 
     cv::Mat intersection;
     cv::Mat union_mask;
