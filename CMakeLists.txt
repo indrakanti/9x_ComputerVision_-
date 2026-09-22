@@ -59,6 +59,9 @@ add_cv9x_example(cv9x_gradients
 add_cv9x_example(cv9x_edge_derivatives
     "05_DerivativesEdgeDetection/00_DerivativesAndEdges/edge_derivatives.cpp")
 
+add_cv9x_example(cv9x_canny
+    "05_DerivativesEdgeDetection/01_CannyFromScratch/canny.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -72,6 +75,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_gradients --self-test)
     add_test(NAME cv9x_edge_derivatives_self_test
         COMMAND cv9x_edge_derivatives --self-test)
+    add_test(NAME cv9x_canny_self_test
+        COMMAND cv9x_canny --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
