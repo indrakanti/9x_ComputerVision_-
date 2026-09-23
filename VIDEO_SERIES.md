@@ -38,7 +38,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 06 | Sobel & Scharr Image Gradients in C++ — Magnitude, Direction & Signed Derivatives | [lesson + recording script](03_ImageGradients/00_SobelScharr/VIDEO.md) | TBD |
 | 07 | Image Derivatives & Edge Detection — Sobel, Laplacian and Zero Crossings | [lesson + recording script](05_DerivativesEdgeDetection/00_DerivativesAndEdges/VIDEO.md) | TBD |
 | 08 | Canny Edge Detection from Scratch in C++ — NMS + Hysteresis Explained | [lesson + recording script](05_DerivativesEdgeDetection/01_CannyFromScratch/VIDEO.md) | TBD |
-| 09 | Corner Detection — Harris, Shi-Tomasi and FAST | `06_FeatureDetection/` | TBD |
+| 09 | Corner Detection in C++ — Harris, Shi-Tomasi & FAST Explained | [lesson + recording script](06_FeatureDetection/00_CornerDetectors/VIDEO.md) | TBD |
 | 10 | SIFT Part 1 — Scale Space and Difference of Gaussians | `07_SIFT/` | TBD |
 | 11 | SIFT Part 2 — Keypoint Localization and Orientation | `07_SIFT/` | TBD |
 | 12 | SIFT Part 3 — Descriptors and Feature Matching | `07_SIFT/` | TBD |
