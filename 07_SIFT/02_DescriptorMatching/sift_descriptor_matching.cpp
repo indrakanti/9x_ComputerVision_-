@@ -483,7 +483,7 @@ bool runSelfTest() {
     for (int row = 0; row < ramp_x.rows; ++row) {
         for (int col = 0; col < ramp_x.cols; ++col) {
             const float value =
-                static_cast<float>(20.0 + 0.5 * col + 0.1 * row);
+                static_cast<float>(20.0 + 0.5 * col);
             ramp_x.at<float>(row, col) = value;
             ramp_x_scaled.at<float>(row, col) = value * 2.5f;
         }
@@ -511,7 +511,7 @@ bool runSelfTest() {
     for (int row = 0; row < vertical.rows; ++row) {
         for (int col = 0; col < vertical.cols; ++col) {
             vertical.at<float>(row, col) =
-                static_cast<float>(20.0 + 0.5 * row + 0.1 * col);
+                static_cast<float>(20.0 + 0.5 * row);
         }
     }
 
