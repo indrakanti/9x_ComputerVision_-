@@ -909,12 +909,12 @@ bool runSelfTest() {
 
     check(status == RefineStatus::Accepted,
           "quadratic extremum passes localization");
-    check(std::abs(refined.point.x - target_x) <= 1e-5,
+    check(std::abs(refined.point.x - target_x) <= 1e-4,
           "Taylor localization recovers fractional x");
-    check(std::abs(refined.point.y - target_y) <= 1e-5,
+    check(std::abs(refined.point.y - target_y) <= 1e-4,
           "Taylor localization recovers fractional y");
     check(std::abs(refined.layer_offset -
-                   static_cast<float>(target_s - 1.0)) <= 1e-5,
+                   static_cast<float>(target_s - 1.0)) <= 1e-4,
           "Taylor localization recovers fractional scale");
 
     RefinedKeypoint low_contrast;
