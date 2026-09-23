@@ -45,7 +45,7 @@ That observation leads to the structure tensor.
 
 ## 2. Structure tensor
 
-Using image gradients (I_x) and (I_y), define
+Using image gradients $I_x$ and $I_y$, define
 
 $$
 M =
@@ -57,15 +57,15 @@ $$
 
 The sums are over a local window.
 
-In the implementation, Sobel computes (I_x) and (I_y), then a local box filter aggregates:
+In the implementation, Sobel computes $I_x$ and $I_y$, then a local box filter aggregates:
 
-- (I_x^2)
-- (I_y^2)
-- (I_xI_y)
+- $I_x^2$
+- $I_y^2$
+- $I_xI_y$
 
 ## 3. Eigenvalue interpretation
 
-Let the eigenvalues of (M) be (lambda_1) and (lambda_2).
+Let the eigenvalues of $M$ be $\\lambda_1$ and $\\lambda_2$.
 
 ### Flat region
 
@@ -112,8 +112,8 @@ $$
 Interpretation:
 
 - (R \approx 0): flat
-- (R < 0): edge-like
-- (R > 0): corner-like
+- $R < 0$: edge-like
+- $R > 0$: corner-like
 
 The CLI exposes `--harris-k`.
 
