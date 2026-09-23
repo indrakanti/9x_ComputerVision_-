@@ -8,6 +8,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <utility>
 #include <vector>
 
 namespace fs = std::filesystem;
@@ -192,12 +193,19 @@ Pyramid buildGaussianPyramid(const cv::Mat& input,
         octave.reserve(incremental.size());
 
         cv::Mat first;
-        cv::GaussianBlur(octave_base,
-                         first,
-                         cv::Size(0, 0),
-                         incremental[0],
-                         incremental[0],
-                         cv::BORDER_REFLECT_101);
+        if (octave_index == 0) {
+            cv::GaussianBlur(octave_base,
+                             first,
+                             cv::Size(0, 0),
+                             incremental[0],
+                             incremental[0],
+                             cv::BORDER_REFLECT_101);
+        } else {
+            // octave_base comes from Gaussian layer 'intervals' of the
+            // previous octave. After downsampling by two, that layer already
+            // represents sigma0 relative to the new pixel spacing.
+            first = octave_base.clone();
+        }
         octave.push_back(first);
 
         for (std::size_t layer = 1; layer < incremental.size(); ++layer) {
