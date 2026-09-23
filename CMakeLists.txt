@@ -74,6 +74,9 @@ add_cv9x_example(cv9x_sift_localization_orientation
 add_cv9x_example(cv9x_sift_descriptor_matching
     "07_SIFT/02_DescriptorMatching/sift_descriptor_matching.cpp")
 
+add_cv9x_example(cv9x_orb_vs_sift
+    "08_FeatureMatching/00_ORBvsSIFT/orb_vs_sift.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -97,6 +100,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_sift_localization_orientation --self-test)
     add_test(NAME cv9x_sift_descriptor_matching_self_test
         COMMAND cv9x_sift_descriptor_matching --self-test)
+    add_test(NAME cv9x_orb_vs_sift_self_test
+        COMMAND cv9x_orb_vs_sift --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
