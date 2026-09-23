@@ -410,12 +410,14 @@ cv::Mat drawMatchesManual(
         left.cols, 0, right.cols, right.rows)));
 
     for (const auto& match : report.matches) {
-        const cv::Point p1 =
+        const cv::Point2f p1f =
             report.image1.keypoints[
                 static_cast<std::size_t>(match.query_index)].pt;
-        cv::Point p2 =
+        const cv::Point2f p2f =
             report.image2.keypoints[
                 static_cast<std::size_t>(match.train_index)].pt;
+        const cv::Point p1(cvRound(p1f.x), cvRound(p1f.y));
+        cv::Point p2(cvRound(p2f.x), cvRound(p2f.y));
         p2.x += left.cols;
 
         cv::circle(output, p1, 3, cv::Scalar(0, 255, 0), 1, cv::LINE_AA);
