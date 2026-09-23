@@ -165,7 +165,7 @@ $$
 
 That image is downsampled by two to become the next octave's base.
 
-After halving image resolution, its blur relative to the new pixel spacing is again consistent with the octave base scale.
+After halving image resolution, its blur relative to the new pixel spacing is again consistent with \(\sigma_0\). The next octave therefore uses that downsampled image **directly as layer 0**; it does not apply \(\sigma_0\) a second time.
 
 The implementation uses direct factor-of-two subsampling rather than `pyrDown()` so that octave transition does not silently add another Gaussian blur.
 
