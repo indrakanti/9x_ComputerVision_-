@@ -40,7 +40,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 08 | Canny Edge Detection from Scratch in C++ — NMS + Hysteresis Explained | [lesson + recording script](05_DerivativesEdgeDetection/01_CannyFromScratch/VIDEO.md) | TBD |
 | 09 | Corner Detection in C++ — Harris, Shi-Tomasi & FAST Explained | [lesson + recording script](06_FeatureDetection/00_CornerDetectors/VIDEO.md) | TBD |
 | 10 | SIFT Part 1 — Scale Space & Difference of Gaussians from First Principles | [lesson + recording script](07_SIFT/00_ScaleSpaceDoG/VIDEO.md) | TBD |
-| 11 | SIFT Part 2 — Keypoint Localization and Orientation | `07_SIFT/` | TBD |
+| 11 | SIFT Part 2 — Subpixel Localization, Edge Rejection & Orientation in C++ | [lesson + recording script](07_SIFT/01_LocalizationOrientation/VIDEO.md) | TBD |
 | 12 | SIFT Part 3 — Descriptors and Feature Matching | `07_SIFT/` | TBD |
 | 13 | ORB vs SIFT — Speed, Invariance and Embedded Tradeoffs | planned | TBD |
 | 14 | Feature Matching Done Correctly — Ratio Test + RANSAC | planned | TBD |
