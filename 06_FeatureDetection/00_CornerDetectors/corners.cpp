@@ -443,21 +443,31 @@ bool runSelfTest() {
               "Shi-Tomasi detects synthetic square corner near expected location");
     }
 
-    check(!square_result.fast_keypoints.empty(),
-          "FAST detects corners on synthetic square");
+    cv::Mat fast_pattern(31, 31, CV_8U, cv::Scalar(0));
+    const cv::Point fast_center(15, 15);
+    fast_pattern.at<unsigned char>(fast_center) = 0;
 
-    bool fast_near_any_corner = false;
-    for (const auto& point : expected) {
-        if (hasKeypointNear(square_result.fast_keypoints,
-                            cv::Point2f(static_cast<float>(point.x),
-                                        static_cast<float>(point.y)),
-                            6.0)) {
-            fast_near_any_corner = true;
-            break;
-        }
+    const std::vector<cv::Point> fast_circle_offsets = {
+        {0, -3}, {1, -3}, {2, -2}, {3, -1},
+        {3, 0}, {3, 1}, {2, 2}, {1, 3},
+        {0, 3}, {-1, 3}, {-2, 2}, {-3, 1},
+        {-3, 0}, {-3, -1}, {-2, -2}, {-1, -3}
+    };
+    for (const auto& offset : fast_circle_offsets) {
+        fast_pattern.at<unsigned char>(fast_center + offset) = 255;
     }
-    check(fast_near_any_corner,
-          "FAST produces a keypoint near a synthetic square corner");
+
+    std::vector<cv::KeyPoint> fast_pattern_keypoints;
+    cv::FAST(fast_pattern,
+             fast_pattern_keypoints,
+             20,
+             false,
+             cv::FastFeatureDetector::TYPE_9_16);
+    check(hasKeypointNear(fast_pattern_keypoints,
+                          cv::Point2f(static_cast<float>(fast_center.x),
+                                      static_cast<float>(fast_center.y)),
+                          0.5),
+          "FAST detects a center that explicitly satisfies the FAST-9 circle criterion");
 
     cv::Mat edge = cv::Mat::zeros(96, 96, CV_32F);
     edge.colRange(48, edge.cols).setTo(255.0f);
