@@ -39,7 +39,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 07 | Image Derivatives & Edge Detection — Sobel, Laplacian and Zero Crossings | [lesson + recording script](05_DerivativesEdgeDetection/00_DerivativesAndEdges/VIDEO.md) | TBD |
 | 08 | Canny Edge Detection from Scratch in C++ — NMS + Hysteresis Explained | [lesson + recording script](05_DerivativesEdgeDetection/01_CannyFromScratch/VIDEO.md) | TBD |
 | 09 | Corner Detection in C++ — Harris, Shi-Tomasi & FAST Explained | [lesson + recording script](06_FeatureDetection/00_CornerDetectors/VIDEO.md) | TBD |
-| 10 | SIFT Part 1 — Scale Space and Difference of Gaussians | `07_SIFT/` | TBD |
+| 10 | SIFT Part 1 — Scale Space & Difference of Gaussians from First Principles | [lesson + recording script](07_SIFT/00_ScaleSpaceDoG/VIDEO.md) | TBD |
 | 11 | SIFT Part 2 — Keypoint Localization and Orientation | `07_SIFT/` | TBD |
 | 12 | SIFT Part 3 — Descriptors and Feature Matching | `07_SIFT/` | TBD |
 | 13 | ORB vs SIFT — Speed, Invariance and Embedded Tradeoffs | planned | TBD |
