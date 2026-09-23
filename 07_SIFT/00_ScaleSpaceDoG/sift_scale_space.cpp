@@ -403,6 +403,12 @@ double maxAbsValue(const cv::Mat& input) {
     return std::max(std::abs(min_value), std::abs(max_value));
 }
 
+double maxAbsDifference(const cv::Mat& a, const cv::Mat& b) {
+    cv::Mat difference;
+    cv::absdiff(a, b, difference);
+    return maxAbsValue(difference);
+}
+
 bool hasExtremumNear(const std::vector<ScaleExtremum>& extrema,
                      int octave,
                      int layer,
@@ -488,10 +494,17 @@ bool runSelfTest() {
     cv::Mat impulse = cv::Mat::zeros(65, 65, CV_32F);
     impulse.at<float>(32, 32) = 255.0f;
     const Pyramid impulse_gaussian =
-        buildGaussianPyramid(impulse, 1, intervals, sigma0);
+        buildGaussianPyramid(impulse, 2, intervals, sigma0);
     check(impulse_gaussian.front().front().at<float>(32, 32) >
               impulse_gaussian.front().back().at<float>(32, 32),
           "Gaussian peak decreases as scale increases");
+
+    if (impulse_gaussian.size() >= 2) {
+        const cv::Mat expected_next_base =
+            downsampleBy2(impulse_gaussian[0][static_cast<std::size_t>(intervals)]);
+        check(maxAbsDifference(expected_next_base, impulse_gaussian[1][0]) <= 1e-6,
+              "next octave base reuses the correctly blurred transition layer");
+    }
 
     const Pyramid impulse_dog = buildDoGPyramid(impulse_gaussian);
     cv::Mat explicit_difference;
