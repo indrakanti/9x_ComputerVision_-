@@ -239,7 +239,7 @@ The self-test verifies:
 - constant image returns no corners
 - a synthetic filled square produces Harris corners near all four geometric corners
 - the same square produces Shi-Tomasi corners near all four corners
-- FAST detects at least one keypoint near the square corners
+- an explicit synthetic FAST-9 circle pattern is detected at its center
 - a pure straight edge does not create a positive Harris corner maximum
 - a pure straight edge has near-zero Shi-Tomasi minimum eigenvalue
 
