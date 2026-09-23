@@ -8,7 +8,7 @@ The purpose of Part 1 is to answer one question:
 
 The answer is **scale space**.
 
-This lesson builds the Gaussian pyramid, constructs Difference-of-Gaussian (DoG) images, and detects raw 3-D extrema across (x), (y), and scale.
+This lesson builds the Gaussian pyramid, constructs Difference-of-Gaussian (DoG) images, and detects raw 3-D extrema across $x$, $y$, and scale.
 
 It intentionally stops before SIFT keypoint localization, edge-response rejection, orientation assignment, and descriptor construction. Those are later lessons.
 
@@ -19,7 +19,7 @@ By the end of this lesson you should be able to:
 - explain why single-scale feature detection is not scale invariant
 - define Gaussian scale space
 - explain octaves and intervals
-- derive the scale multiplier (k)
+- derive the scale multiplier $k$
 - distinguish absolute sigma from incremental blur
 - build a Gaussian octave correctly
 - build a DoG octave by subtracting adjacent Gaussian levels
@@ -48,7 +48,7 @@ SIFT solves this by searching for stable structure across a family of progressiv
 
 ## 2. Gaussian scale space
 
-For an image (I(x,y)), Gaussian scale space is
+For an image $I(x,y)$, Gaussian scale space is
 
 $$
 L(x,y,\sigma) = G(x,y,\sigma) * I(x,y)
@@ -64,13 +64,13 @@ G(x,y,\sigma) =
 \right)
 $$
 
-Increasing (sigma) removes progressively finer image structure.
+Increasing $\\sigma$ removes progressively finer image structure.
 
 ## 3. Octaves and intervals
 
 One **octave** spans a doubling of scale.
 
-If an octave contains (s) intervals, define
+If an octave contains $s$ intervals, define
 
 $$
 k = 2^{1/s}
@@ -82,7 +82,7 @@ $$
 \sigma_i = \sigma_0 k^i
 $$
 
-With the common SIFT choice (s=3):
+With the common SIFT choice $s=3$:
 
 $$
 k = 2^{1/3}
@@ -98,7 +98,7 @@ The self-test verifies this relationship numerically.
 
 ## 4. Why SIFT needs extra Gaussian images
 
-For (s) scale intervals, the lesson constructs:
+For $s$ scale intervals, the lesson constructs:
 
 $$
 s+3
@@ -116,7 +116,7 @@ DoG images.
 
 The extra levels are necessary because scale-space extrema need a previous, current, and next DoG layer.
 
-With (s=3):
+With $s=3$:
 
 ```text
 Gaussian images: 6
@@ -128,9 +128,9 @@ Extrema-tested DoG layers: the interior layers
 
 This is an important implementation detail.
 
-Suppose one Gaussian image is already blurred to (sigma_{prev}), and we want the next level to have total blur (sigma_{target}).
+Suppose one Gaussian image is already blurred to $\\sigma_{prev}$, and we want the next level to have total blur $\\sigma_{target}$.
 
-We must not blur it again with (sigma_{target}).
+We must not blur it again with $\\sigma_{target}$.
 
 Gaussian variances add:
 
@@ -157,7 +157,7 @@ The implementation keeps both concepts explicit.
 
 Within one octave, scale increases geometrically.
 
-The Gaussian image at interval index (s) has twice the base sigma:
+The Gaussian image at interval index $s$ has twice the base sigma:
 
 $$
 \sigma_s = \sigma_0 k^s = 2\sigma_0
@@ -199,7 +199,7 @@ G(x,y,k\sigma) - G(x,y,\sigma)
 C\sigma^2\nabla^2 G
 $$
 
-for a scale-dependent constant (C).
+for a scale-dependent constant $C$.
 
 This gives SIFT a practical way to search for blob-like structures across scale without explicitly evaluating a full Laplacian-of-Gaussian filter at every scale.
 
@@ -209,10 +209,9 @@ A DoG sample is considered a raw candidate when it is strictly greater than all 
 
 That means comparing against:
 
-- 8 neighbors in the previous DoG level
-- 8 neighbors in the current level
-- 8 neighbors in the next level
-- plus the center-adjacent samples in the previous/next levels
+- 9 samples in the previous DoG level
+- 8 neighbors in the current DoG level
+- 9 samples in the next DoG level
 
 Total comparison neighbors:
 
