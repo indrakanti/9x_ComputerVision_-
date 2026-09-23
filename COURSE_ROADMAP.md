@@ -38,7 +38,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 | 05 | Image gradients: Sobel, Scharr, magnitude, direction | **Video-ready: signed gradients + magnitude/direction** |
 | 06 | Derivatives and edge detection: Laplacian, Canny, NMS, hysteresis | **Video-ready: derivatives/Laplacian + Canny from scratch** |
 | 07 | Feature detection: Harris, Shi-Tomasi, FAST | **Video-ready: structure tensor + three corner detectors** |
-| 08 | Feature descriptors: SIFT, ORB, BRIEF | **SIFT Parts 1–2 video-ready: scale space, localization, orientation; descriptor next** |
+| 08 | Feature descriptors: SIFT, ORB, BRIEF | **SIFT Parts 1–3 video-ready: scale space, localization, orientation, descriptor/matching** |
 | 09 | Feature matching: BF, FLANN, ratio test, geometric verification | Planned |
 
 ### Part III — Geometry and Cameras
