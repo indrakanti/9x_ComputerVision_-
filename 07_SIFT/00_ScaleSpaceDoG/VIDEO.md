@@ -19,9 +19,9 @@ Viewers should understand:
 - why single-scale corners are not enough
 - Gaussian scale space
 - octaves and intervals
-- (k=2^{1/s})
+- $k=2^{1/s}$
 - absolute vs incremental sigma
-- why SIFT uses (s+3) Gaussian images
+- why SIFT uses $s+3$ Gaussian images
 - Difference of Gaussians
 - 26-neighbor extrema detection
 - why raw extrema are not yet final keypoints
@@ -84,7 +84,7 @@ Explain:
 - octave = factor-of-two scale range
 - interval = discrete scale step inside an octave
 
-For (s) intervals:
+For $s$ intervals:
 
 $$
 k=2^{1/s}
@@ -98,7 +98,7 @@ $$
 k^s = 2
 $$
 
-For (s=3):
+For $s=3$:
 
 $$
 k=2^{1/3}
@@ -137,13 +137,13 @@ Show how using the absolute target sigma repeatedly over-blurs the image.
 
 ### 14:00 — Gaussian octave
 
-Show six images for (s=3).
+Show six images for $s=3$.
 
-Explain why SIFT uses (s+3), not just (s).
+Explain why SIFT uses $s+3$, not just (s).
 
 ### 17:00 — Next octave
 
-Highlight Gaussian level (s).
+Highlight Gaussian level $s$.
 
 Show direct factor-of-two downsampling.
 
