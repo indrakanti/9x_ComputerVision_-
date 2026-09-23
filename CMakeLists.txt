@@ -68,6 +68,9 @@ add_cv9x_example(cv9x_corners
 add_cv9x_example(cv9x_sift_scale_space
     "07_SIFT/00_ScaleSpaceDoG/sift_scale_space.cpp")
 
+add_cv9x_example(cv9x_sift_localization_orientation
+    "07_SIFT/01_LocalizationOrientation/sift_localization_orientation.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -87,6 +90,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_corners --self-test)
     add_test(NAME cv9x_sift_scale_space_self_test
         COMMAND cv9x_sift_scale_space --self-test)
+    add_test(NAME cv9x_sift_localization_orientation_self_test
+        COMMAND cv9x_sift_localization_orientation --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
