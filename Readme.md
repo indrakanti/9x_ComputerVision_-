@@ -16,6 +16,7 @@ Python examples are included where they improve accessibility or make comparison
 ## Course Resources
 
 - [Complete Course Roadmap](COURSE_ROADMAP.md)
+- [Continuous Perception Evolution Plan](COURSE_EVOLUTION.md)
 - [YouTube Video Series and Link Index](VIDEO_SERIES.md)
 - [Linux Build Guide](BUILDING.md)
 - [Lesson Authoring Guide](LESSON_GUIDE.md)
@@ -46,6 +47,9 @@ The roadmap extends this foundation into:
 - CNNs, ONNX inference, object detection, segmentation, and pose
 - production C++ topics such as memory ownership, benchmarking, multithreading, zero-copy concepts, real-time considerations, testing, and deployment
 - end-to-end projects and a capstone perception pipeline
+- live video, optical flow, persistent feature tracks, object tracking, temporal state and multi-object tracking
+- 3-D / multi-camera perception, visual odometry, BEV/occupancy and scene memory
+- modern foundation vision, open-vocabulary perception, vision-language systems and future world-aware / embodied perception
 
 ## Learning Pattern
 
@@ -107,7 +111,10 @@ See [LESSON_GUIDE.md](LESSON_GUIDE.md) for the standard lesson layout and defini
 | v0.3 | Recognition and tracking |
 | v0.4 | Deep computer vision |
 | v0.5 | Production C++ vision on Linux |
-| v1.0 | Complete course + projects + capstone |
+| v0.6 | Live video + feature/object tracking |
+| v0.7 | 3-D, foundation and future perception |
+| v1.0 | Complete core course + projects + capstone |
+| v2.0 | Continuous perception: temporal memory, multimodal/world-aware systems |
 
 See [COURSE_ROADMAP.md](COURSE_ROADMAP.md) for the module-by-module plan.
 
@@ -143,4 +150,4 @@ A repository license still needs to be selected before the project is presented 
 
 This repository should not become a collection of OpenCV one-liners.
 
-The goal is to help an engineer understand a vision algorithm from **light and pixels**, through **math and implementation**, all the way to **runtime behavior and deployment**.
+The goal is to help an engineer understand perception from **light and pixels**, through **math and implementation**, into **live video, persistent tracks, 3-D scene state, learned representations, temporal memory, runtime behavior, and deployment**.

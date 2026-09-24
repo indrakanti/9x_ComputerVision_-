@@ -44,7 +44,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 12 | SIFT Part 3 — Build the 128-D Descriptor & Match Features in C++ | [lesson + recording script](07_SIFT/02_DescriptorMatching/VIDEO.md) | TBD |
 | 13 | ORB vs SIFT — Binary Descriptors, Hamming Distance & Embedded Tradeoffs | [lesson + recording script](08_FeatureMatching/00_ORBvsSIFT/VIDEO.md) | TBD |
 | 14 | Feature Matching Done Correctly — Ratio Test + Homography + RANSAC | [lesson + recording script](08_FeatureMatching/01_RatioRansac/VIDEO.md) | TBD |
-| 15 | Homography Explained — Perspective Transform in Real Applications | planned | TBD |
+| 15 | Homography from First Principles — Perspective Rectification in C++ | [lesson + recording script](09_Geometry/00_HomographyPerspective/VIDEO.md) | TBD |
 | 16 | Camera Intrinsics and Extrinsics Without the Confusion | planned | TBD |
 | 17 | Camera Calibration in OpenCV C++ + Reprojection Error | planned | TBD |
 | 18 | Stereo Vision and Epipolar Geometry — From Two Cameras to Depth | planned | TBD |
@@ -66,6 +66,23 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 34 | Project: Stereo Depth Pipeline | planned | TBD |
 | 35 | Project: Real-Time Object Detection with Latency Metrics | planned | TBD |
 | 36 | Capstone: Build a Production-Style C++ Perception Pipeline | planned | TBD |
+
+## Future Expansion
+
+The numbered series above covers the current core sequence. The course is intentionally designed to continue into:
+
+- optical flow and KLT feature tracking
+- live video capture and temporal pipelines
+- single- and multi-object tracking
+- Kalman filtering and data association
+- visual odometry / SLAM
+- multi-camera, depth, BEV and occupancy
+- video transformers and temporal perception
+- open-vocabulary / foundation vision
+- vision-language systems
+- world models, temporal memory and embodied perception
+
+See [COURSE_EVOLUTION.md](COURSE_EVOLUTION.md) for the full evolution plan and periodic modernization policy.
 
 ## Per-Video Repository File
 
