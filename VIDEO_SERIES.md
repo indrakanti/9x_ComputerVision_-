@@ -45,7 +45,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 13 | ORB vs SIFT — Binary Descriptors, Hamming Distance & Embedded Tradeoffs | [lesson + recording script](08_FeatureMatching/00_ORBvsSIFT/VIDEO.md) | TBD |
 | 14 | Feature Matching Done Correctly — Ratio Test + Homography + RANSAC | [lesson + recording script](08_FeatureMatching/01_RatioRansac/VIDEO.md) | TBD |
 | 15 | Homography from First Principles — Perspective Rectification in C++ | [lesson + recording script](09_Geometry/00_HomographyPerspective/VIDEO.md) | TBD |
-| 16 | Camera Intrinsics and Extrinsics Without the Confusion | planned | TBD |
+| 16 | Camera Intrinsics, Extrinsics & Distortion — 3-D to Pixels from First Principles | [lesson + recording script](09_Geometry/01_CameraModel/VIDEO.md) | TBD |
 | 17 | Camera Calibration in OpenCV C++ + Reprojection Error | planned | TBD |
 | 18 | Stereo Vision and Epipolar Geometry — From Two Cameras to Depth | planned | TBD |
 | 19 | Optical Flow — Tracking Motion Between Frames | planned | TBD |
