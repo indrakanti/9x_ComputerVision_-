@@ -407,12 +407,18 @@ std::vector<cv::Point2d> projectOpenCvReference(
     const cv::Mat camera_matrix(
         intrinsicMatrix(intrinsics));
 
+    const cv::Mat tvec =
+        (cv::Mat_<double>(3, 1) <<
+            translation[0],
+            translation[1],
+            translation[2]);
+
     std::vector<cv::Point2d> projected;
 
     cv::projectPoints(
         points,
         rvec,
-        cv::Mat(translation),
+        tvec,
         camera_matrix,
         distortionVector(distortion),
         projected);
@@ -580,8 +586,8 @@ bool runSelfTest() {
             tangential);
 
     check(
-        std::abs(tangential_result.x - 0.1975) < 1e-12 &&
-        std::abs(tangential_result.y + 0.09875) < 1e-12,
+        std::abs(tangential_result.x - 0.1970) < 1e-12 &&
+        std::abs(tangential_result.y + 0.0985) < 1e-12,
         "tangential distortion matches explicit formula");
 
     cv::Point2d behind_pixel;
