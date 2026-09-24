@@ -6,6 +6,7 @@
 #include <cmath>
 #include <filesystem>
 #include <iostream>
+#include <limits>
 #include <stdexcept>
 #include <string>
 #include <vector>
@@ -432,6 +433,10 @@ double maxProjectionError(
     const Distortion& distortion,
     const cv::Matx33d& rotation,
     const cv::Vec3d& translation) {
+    if (std::abs(intrinsics.skew) > 1e-12) {
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+
     const auto reference =
         projectOpenCvReference(
             points,
@@ -791,9 +796,17 @@ int main(int argc, char** argv) {
         << options.distortion.p1 << ", "
         << options.distortion.p2 << ", "
         << options.distortion.k3 << "]\n"
-        << "Manual vs OpenCV max projection error: "
-        << reference_error
-        << " px\n"
+        << "Manual vs OpenCV max projection error: ";
+    if (std::isnan(reference_error)) {
+        std::cout
+            << "not reported for nonzero skew\n";
+    } else {
+        std::cout
+            << reference_error
+            << " px\n";
+    }
+
+    std::cout
         << "Projected synthetic 3-D points: "
         << scene_points.size()
         << '\n'
