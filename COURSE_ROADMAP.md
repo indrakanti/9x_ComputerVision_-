@@ -45,8 +45,8 @@ The course is designed for engineers who want more than API-level OpenCV example
 
 | Module | Topic | Status |
 |---|---|---|
-| 10 | Coordinate systems and projective geometry | Planned |
-| 11 | Homography and perspective transforms | Planned |
+| 10 | Coordinate systems and projective geometry | **Video-ready foundation: homogeneous coordinates + projective point mapping** |
+| 11 | Homography and perspective transforms | **Video-ready: manual 8-DoF solve + inverse warp + rectification** |
 | 12 | Camera model, intrinsic/extrinsic parameters, distortion | Planned |
 | 13 | Camera calibration and reprojection error | Planned |
 | 14 | Stereo vision, epipolar geometry, disparity, depth | Planned |
@@ -89,7 +89,41 @@ This part is the primary differentiator of the course.
 | 34 | Testing vision algorithms with synthetic images and golden data | Planned |
 | 35 | Deployment: ONNX, containers, embedded/edge devices | Planned |
 
-### Part VII — Applied Projects
+### Part VII — Video, Tracking, and Continuous Perception
+
+This is the transition from isolated images to systems that maintain state over time.
+
+| Module | Topic | Status |
+|---|---|---|
+| 36 | Video capture, timestamps, frame pacing, dropped-frame handling | Planned |
+| 37 | Optical flow: Lucas-Kanade and pyramidal tracking | Planned |
+| 38 | KLT feature tracks: birth, death, re-detection, forward/backward checks | Planned |
+| 39 | Frame-to-frame homography tracking, stabilization, motion compensation | Planned |
+| 40 | Single-object tracking: template, correlation, MOSSE/KCF/CSRT concepts | Planned |
+| 41 | Kalman filtering for visual state estimation | Planned |
+| 42 | Data association: IoU, cost matrices, Hungarian assignment | Planned |
+| 43 | Multi-object tracking: track lifecycle, identity, occlusion, reacquisition | Planned |
+| 44 | Tracking-by-detection: appearance embeddings and modern MOT pipelines | Planned |
+| 45 | Temporal perception pipeline: detector + flow + tracker + metrics | Planned |
+
+### Part VIII — 3-D, Foundation Vision, and Future Perception
+
+| Module | Topic | Status |
+|---|---|---|
+| 46 | Visual odometry and SLAM foundations | Planned |
+| 47 | Multi-camera geometry, depth, BEV and occupancy representations | Planned |
+| 48 | Video understanding and temporal attention | Planned |
+| 49 | Vision transformers and self-supervised visual representations | Planned |
+| 50 | Open-vocabulary detection and promptable segmentation | Planned |
+| 51 | Vision-language models and grounded visual reasoning | Planned |
+| 52 | Neural scene representations: NeRF / 3-D Gaussian-splatting concepts | Planned |
+| 53 | World models, temporal memory, prediction and object permanence | Planned |
+| 54 | Active / embodied perception and closed-loop visual agents | Planned |
+| 55 | Continual adaptation, uncertainty, safety and evaluation | Planned |
+
+See [COURSE_EVOLUTION.md](COURSE_EVOLUTION.md) for the long-term path from pixels to live, stateful perception and the periodic modernization policy.
+
+### Part IX — Applied Projects
 
 | Project | Deliverable |
 |---|---|
@@ -153,7 +187,10 @@ A lesson is complete when it has:
 - **v0.3 — Recognition and Tracking:** Modules 16–19
 - **v0.4 — Deep Vision:** Modules 20–25
 - **v0.5 — Production C++ Vision:** Modules 26–35
-- **v1.0 — Complete Course:** all modules + applied projects + capstone
+- **v0.6 — Live Video & Tracking:** Modules 36–45
+- **v0.7 — 3-D / Foundation / Future Perception:** Modules 46–55
+- **v1.0 — Complete Core Course:** fundamentals through production + applied projects
+- **v2.0 — Continuous Perception Course:** live tracking, temporal memory, multimodal/world-aware perception
 
 ## Course Principle
 
