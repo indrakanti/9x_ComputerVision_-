@@ -39,7 +39,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 | 06 | Derivatives and edge detection: Laplacian, Canny, NMS, hysteresis | **Video-ready: derivatives/Laplacian + Canny from scratch** |
 | 07 | Feature detection: Harris, Shi-Tomasi, FAST | **Video-ready: structure tensor + three corner detectors** |
 | 08 | Feature descriptors: SIFT, ORB, BRIEF | **Video-ready: complete SIFT + ORB/SIFT engineering comparison** |
-| 09 | Feature matching: BF, FLANN, ratio test, geometric verification | Planned |
+| 09 | Feature matching: BF, FLANN, ratio test, geometric verification | **Video-ready: ratio test + manual homography RANSAC verification** |
 
 ### Part III — Geometry and Cameras
 
