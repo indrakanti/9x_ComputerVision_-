@@ -67,23 +67,6 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 35 | Project: Real-Time Object Detection with Latency Metrics | planned | TBD |
 | 36 | Capstone: Build a Production-Style C++ Perception Pipeline | planned | TBD |
 
-## Future Expansion
-
-The numbered series above covers the current core sequence. The course is intentionally designed to continue into:
-
-- optical flow and KLT feature tracking
-- live video capture and temporal pipelines
-- single- and multi-object tracking
-- Kalman filtering and data association
-- visual odometry / SLAM
-- multi-camera, depth, BEV and occupancy
-- video transformers and temporal perception
-- open-vocabulary / foundation vision
-- vision-language systems
-- world models, temporal memory and embodied perception
-
-See [COURSE_EVOLUTION.md](COURSE_EVOLUTION.md) for the full evolution plan and periodic modernization policy.
-
 ## Per-Video Repository File
 
 Each lesson should eventually include a `VIDEO.md` containing:
