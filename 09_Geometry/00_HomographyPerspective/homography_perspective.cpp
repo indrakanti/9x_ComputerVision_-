@@ -673,10 +673,13 @@ bool runSelfTest() {
         "image identity homography is solvable");
 
     if (!image_identity.empty()) {
+        const cv::Mat exact_identity =
+            cv::Mat::eye(3, 3, CV_64F);
+
         const cv::Mat manual =
             manualWarpPerspective(
                 synthetic,
-                image_identity,
+                exact_identity,
                 synthetic.size());
 
         check(
