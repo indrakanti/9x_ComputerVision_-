@@ -16,7 +16,8 @@ find_package(OpenCV 4 REQUIRED COMPONENTS
     imgproc
     imgcodecs
     highgui
-    features2d)
+    features2d
+    calib3d)
 
 include(CTest)
 
@@ -77,6 +78,9 @@ add_cv9x_example(cv9x_sift_descriptor_matching
 add_cv9x_example(cv9x_orb_vs_sift
     "08_FeatureMatching/00_ORBvsSIFT/orb_vs_sift.cpp")
 
+add_cv9x_example(cv9x_feature_matching_ransac
+    "08_FeatureMatching/01_RatioRansac/feature_matching_ransac.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -102,6 +106,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_sift_descriptor_matching --self-test)
     add_test(NAME cv9x_orb_vs_sift_self_test
         COMMAND cv9x_orb_vs_sift --self-test)
+    add_test(NAME cv9x_feature_matching_ransac_self_test
+        COMMAND cv9x_feature_matching_ransac --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.

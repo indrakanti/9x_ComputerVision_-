@@ -43,7 +43,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 11 | SIFT Part 2 — Subpixel Localization, Edge Rejection & Orientation in C++ | [lesson + recording script](07_SIFT/01_LocalizationOrientation/VIDEO.md) | TBD |
 | 12 | SIFT Part 3 — Build the 128-D Descriptor & Match Features in C++ | [lesson + recording script](07_SIFT/02_DescriptorMatching/VIDEO.md) | TBD |
 | 13 | ORB vs SIFT — Binary Descriptors, Hamming Distance & Embedded Tradeoffs | [lesson + recording script](08_FeatureMatching/00_ORBvsSIFT/VIDEO.md) | TBD |
-| 14 | Feature Matching Done Correctly — Ratio Test + RANSAC | planned | TBD |
+| 14 | Feature Matching Done Correctly — Ratio Test + Homography + RANSAC | [lesson + recording script](08_FeatureMatching/01_RatioRansac/VIDEO.md) | TBD |
 | 15 | Homography Explained — Perspective Transform in Real Applications | planned | TBD |
 | 16 | Camera Intrinsics and Extrinsics Without the Confusion | planned | TBD |
 | 17 | Camera Calibration in OpenCV C++ + Reprojection Error | planned | TBD |
