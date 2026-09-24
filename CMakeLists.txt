@@ -87,6 +87,9 @@ add_cv9x_example(cv9x_homography_perspective
 add_cv9x_example(cv9x_camera_model
     "09_Geometry/01_CameraModel/camera_model.cpp")
 
+add_cv9x_example(cv9x_camera_calibration
+    "09_Geometry/02_CameraCalibration/camera_calibration.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -118,6 +121,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_homography_perspective --self-test)
     add_test(NAME cv9x_camera_model_self_test
         COMMAND cv9x_camera_model --self-test)
+    add_test(NAME cv9x_camera_calibration_self_test
+        COMMAND cv9x_camera_calibration --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
