@@ -48,7 +48,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 | 10 | Coordinate systems and projective geometry | **Video-ready foundation: homogeneous coordinates + projective point mapping** |
 | 11 | Homography and perspective transforms | **Video-ready: manual 8-DoF solve + inverse warp + rectification** |
 | 12 | Camera model, intrinsic/extrinsic parameters, distortion | **Video-ready: manual 3-D→2-D projection + lens distortion** |
-| 13 | Camera calibration and reprojection error | Planned |
+| 13 | Camera calibration and reprojection error | **Video-ready: synthetic calibration + residual diagnostics** |
 | 14 | Stereo vision, epipolar geometry, disparity, depth | Planned |
 | 15 | Optical flow and motion estimation | Planned |
 
