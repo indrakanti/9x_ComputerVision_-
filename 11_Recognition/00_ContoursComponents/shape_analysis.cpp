@@ -331,7 +331,9 @@ cv::Mat visualizeComponents(
 
         cv::circle(
             output,
-            component.centroid,
+            cv::Point(
+                cvRound(component.centroid.x),
+                cvRound(component.centroid.y)),
             3,
             cv::Scalar(255, 255, 255),
             cv::FILLED,
@@ -364,7 +366,7 @@ std::array<double, 7> huMomentsLog(
     for (int i = 0; i < 7; ++i) {
         const double value = raw[i];
 
-        if (std::abs(value) < 1e-30) {
+        if (std::abs(value) < 1e-20) {
             transformed[static_cast<std::size_t>(i)] = 0.0;
             continue;
         }
@@ -585,7 +587,9 @@ cv::Mat drawContourAnalysis(
 
         cv::circle(
             output,
-            descriptor.centroid,
+            cv::Point(
+                cvRound(descriptor.centroid.x),
+                cvRound(descriptor.centroid.y)),
             3,
             cv::Scalar(255, 255, 255),
             cv::FILLED,
