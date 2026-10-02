@@ -456,6 +456,16 @@ bool runSelfTest() {
             aliased) == 0,
         "undersampling a Nyquist-violating stripe pattern aliases to constant black");
 
+    const cv::Mat anti_aliased =
+        antiAliasedSample(
+            stripes,
+            2);
+
+    check(
+        cv::countNonZero(
+            anti_aliased) > 0,
+        "low-pass filtering before sampling prevents the same all-black alias result");
+
     check(
         quantizeValue(0, 2) == 0 &&
         quantizeValue(85, 2) == 85 &&
@@ -533,6 +543,17 @@ bool runSelfTest() {
         scene.type() ==
             CV_8UC3,
         "synthetic image-formation scene has expected dimensions/type");
+
+    const cv::Vec3b red_patch =
+        scene.at<cv::Vec3b>(
+            230,
+            50);
+
+    check(
+        red_patch[0] == 0 &&
+        red_patch[1] == 0 &&
+        red_patch[2] == 255,
+        "OpenCV CV_8UC3 synthetic red patch is stored in BGR channel order");
 
     const cv::Mat roi =
         scene(
