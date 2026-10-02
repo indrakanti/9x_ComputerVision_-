@@ -51,22 +51,23 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 19 | Optical Flow in C++ — Lucas-Kanade, Pyramids & Feature Tracking Explained | [lesson + recording script](10_Motion/00_OpticalFlow/VIDEO.md) | TBD |
 | 20 | Contours & Connected Components in C++ — Shape Descriptors Explained | [lesson + recording script](11_Recognition/00_ContoursComponents/VIDEO.md) | TBD |
 | 21 | HOG + SVM Object Detection in C++ — Classical Vision Before YOLO | [lesson + recording script](11_Recognition/01_HOGSVM/VIDEO.md) | TBD |
-| 22 | CNNs for C++ Engineers — Convolution to Classification | planned | TBD |
-| 23 | Running ONNX Vision Models from C++ | planned | TBD |
-| 24 | YOLO Object Detection in Production C++ | planned | TBD |
-| 25 | Segmentation Explained — Semantic vs Instance | planned | TBD |
-| 26 | `cv::Mat` Memory Model — Copies, ROIs, Ownership and Performance | planned | TBD |
-| 27 | How to Benchmark a Vision Pipeline — Latency, FPS and Jitter | planned | TBD |
-| 28 | Multithreaded Computer Vision Pipelines in C++ | planned | TBD |
-| 29 | Zero-Copy Computer Vision — What It Means and When It Matters | planned | TBD |
-| 30 | Real-Time Linux for Computer Vision — Scheduling and Jitter Basics | planned | TBD |
-| 31 | Testing Computer Vision Algorithms with Synthetic Images | planned | TBD |
-| 32 | Project: Build a Document Scanner in C++ | planned | TBD |
-| 33 | Project: Feature Matching + Panorama Stitching | planned | TBD |
-| 34 | Project: Calibrate a Camera and Estimate Pose | planned | TBD |
-| 35 | Project: Stereo Depth Pipeline | planned | TBD |
-| 36 | Project: Real-Time Object Detection with Latency Metrics | planned | TBD |
-| 37 | Capstone: Build a Production-Style C++ Perception Pipeline | planned | TBD |
+| 22 | k-NN vs SVM in C++ — Feature Scaling, Confusion Matrices & Classical Classification | [lesson + recording script](11_Recognition/02_ClassicalClassification/VIDEO.md) | TBD |
+| 23 | CNNs for C++ Engineers — Convolution to Classification | planned | TBD |
+| 24 | Running ONNX Vision Models from C++ | planned | TBD |
+| 25 | YOLO Object Detection in Production C++ | planned | TBD |
+| 26 | Segmentation Explained — Semantic vs Instance | planned | TBD |
+| 27 | `cv::Mat` Memory Model — Copies, ROIs, Ownership and Performance | planned | TBD |
+| 28 | How to Benchmark a Vision Pipeline — Latency, FPS and Jitter | planned | TBD |
+| 29 | Multithreaded Computer Vision Pipelines in C++ | planned | TBD |
+| 30 | Zero-Copy Computer Vision — What It Means and When It Matters | planned | TBD |
+| 31 | Real-Time Linux for Computer Vision — Scheduling and Jitter Basics | planned | TBD |
+| 32 | Testing Computer Vision Algorithms with Synthetic Images | planned | TBD |
+| 33 | Project: Build a Document Scanner in C++ | planned | TBD |
+| 34 | Project: Feature Matching + Panorama Stitching | planned | TBD |
+| 35 | Project: Calibrate a Camera and Estimate Pose | planned | TBD |
+| 36 | Project: Stereo Depth Pipeline | planned | TBD |
+| 37 | Project: Real-Time Object Detection with Latency Metrics | planned | TBD |
+| 38 | Capstone: Build a Production-Style C++ Perception Pipeline | planned | TBD |
 
 ## Per-Video Repository File
 
