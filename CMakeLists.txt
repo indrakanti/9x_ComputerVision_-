@@ -108,6 +108,9 @@ add_cv9x_example(cv9x_hog_svm
 add_cv9x_example(cv9x_classical_classification
     "11_Recognition/02_ClassicalClassification/classical_classification.cpp")
 
+add_cv9x_example(cv9x_classical_tracking
+    "12_Tracking/00_ClassicalTracking/classical_tracking.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -151,6 +154,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_hog_svm --self-test)
     add_test(NAME cv9x_classical_classification_self_test
         COMMAND cv9x_classical_classification --self-test)
+    add_test(NAME cv9x_classical_tracking_self_test
+        COMMAND cv9x_classical_tracking --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
