@@ -16,6 +16,21 @@ sudo apt update
 sudo apt install -y build-essential cmake pkg-config libopencv-dev
 ```
 
+## First-machine sanity check
+
+From a clean checkout, configure, build, and run Module 00:
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --target cv9x_course_setup
+./build/cv9x_course_setup --self-test
+./build/cv9x_course_setup --output-dir build/setup
+```
+
+This verifies the C++17/OpenCV environment and writes a small environment report plus sanity image.
+
+See [00_Setup/README.md](00_Setup/README.md) for the teaching walkthrough.
+
 ## Configure and build everything
 
 From the repository root:
@@ -67,15 +82,31 @@ This is intentionally opt-in while older examples are being modernized.
 
 ## Running examples
 
-Many existing lessons read images with paths relative to the working directory. Until the lesson cleanup phase is complete, run an example from the directory expected by that lesson or pass an image path when the program supports one.
+Canonical lessons use explicit command-line arguments, deterministic synthetic inputs where appropriate, and `--self-test` modes registered with CTest.
 
-The build system intentionally separates **compilation correctness** from **lesson runtime data layout**. Upcoming course PRs will standardize runtime arguments and data paths.
+Some retained legacy examples still read images relative to their historical working directories. Those examples remain available during migration, but the canonical lesson path is the top-level CMake + CTest workflow.
 
 ## Continuous integration
 
 Pull requests and pushes to `main` run a clean Ubuntu build using `.github/workflows/cmake.yml`.
 
-CI currently validates that the C++ lesson sources compile against the distribution-provided OpenCV 4 development package. Runtime/output regression tests will be added as lessons are standardized.
+CI validates three stages on a clean Ubuntu runner:
+
+```text
+CMake configure
+full C++ build
+CTest lesson self-tests
+```
+
+The canonical lesson self-tests validate deterministic algorithmic invariants in addition to compilation correctness.
+
+## Run the complete lesson test suite
+
+```bash
+ctest --test-dir build --output-on-failure
+```
+
+This is the same test stage used by GitHub Actions.
 
 ## Legacy Makefiles
 

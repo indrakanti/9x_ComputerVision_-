@@ -29,7 +29,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 
 | Ep. | Suggested YouTube Title | Repository Topic | YouTube |
 |---:|---|---|---|
-| 00 | Computer Vision in C++ on Linux — Course Roadmap & Setup | `COURSE_ROADMAP.md` | TBD |
+| 00 | Computer Vision in C++ on Linux — OpenCV, CMake, CTest & CI Setup | [lesson + recording script](00_Setup/VIDEO.md) | TBD |
 | 01 | How a Camera Becomes Pixels — Light, Sampling & Quantization | `Fundametals/` | TBD |
 | 02 | Image Brightness, Contrast, Gamma & Thresholding from First Principles | [lesson + recording script](02_ImageFiltering/01_PointFiltering/VIDEO.md) | TBD |
 | 03 | Convolution Explained Visually — The Core Operation of Computer Vision | [lesson + recording script](02_ImageFiltering/00_ConvolutionFirstPrinciples/VIDEO.md) | TBD |
