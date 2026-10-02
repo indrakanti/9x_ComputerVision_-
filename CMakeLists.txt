@@ -19,7 +19,8 @@ find_package(OpenCV 4 REQUIRED COMPONENTS
     features2d
     calib3d
     video
-    videoio)
+    videoio
+    ml)
 
 include(CTest)
 
@@ -101,6 +102,9 @@ add_cv9x_example(cv9x_optical_flow
 add_cv9x_example(cv9x_shape_analysis
     "11_Recognition/00_ContoursComponents/shape_analysis.cpp")
 
+add_cv9x_example(cv9x_hog_svm
+    "11_Recognition/01_HOGSVM/hog_svm.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -140,6 +144,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_optical_flow --self-test)
     add_test(NAME cv9x_shape_analysis_self_test
         COMMAND cv9x_shape_analysis --self-test)
+    add_test(NAME cv9x_hog_svm_self_test
+        COMMAND cv9x_hog_svm --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.

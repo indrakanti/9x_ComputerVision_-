@@ -50,7 +50,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 18 | Stereo Vision & Epipolar Geometry — From Two Cameras to Metric Depth in C++ | [lesson + recording script](09_Geometry/03_StereoVision/VIDEO.md) | TBD |
 | 19 | Optical Flow in C++ — Lucas-Kanade, Pyramids & Feature Tracking Explained | [lesson + recording script](10_Motion/00_OpticalFlow/VIDEO.md) | TBD |
 | 20 | Contours & Connected Components in C++ — Shape Descriptors Explained | [lesson + recording script](11_Recognition/00_ContoursComponents/VIDEO.md) | TBD |
-| 21 | HOG + SVM Object Detection — Classical Vision Before YOLO | planned | TBD |
+| 21 | HOG + SVM Object Detection in C++ — Classical Vision Before YOLO | [lesson + recording script](11_Recognition/01_HOGSVM/VIDEO.md) | TBD |
 | 22 | CNNs for C++ Engineers — Convolution to Classification | planned | TBD |
 | 23 | Running ONNX Vision Models from C++ | planned | TBD |
 | 24 | YOLO Object Detection in Production C++ | planned | TBD |
