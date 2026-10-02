@@ -1092,9 +1092,9 @@ cv::Mat drawConfusion(
 
     cv::putText(
         image,
-        "rows=true, cols=predicted  accuracy=" +
-            cv::format(
-                "%.3f",
+        std::string(
+            "rows=true, cols=predicted  accuracy=") +
+            std::to_string(
                 metrics.accuracy),
         cv::Point(
             20,
