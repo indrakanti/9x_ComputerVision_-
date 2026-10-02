@@ -35,17 +35,22 @@ The repository already contains material covering:
 - feature detection
 - SIFT concepts and implementation exercises
 
-The roadmap extends this foundation into:
+The canonical classical course now covers:
 
-- feature matching and geometric verification
-- homography and projective geometry
-- camera calibration
-- stereo vision and depth
-- optical flow and tracking
-- classical object detection and classification
-- CNNs, ONNX inference, object detection, segmentation, and pose
-- production C++ topics such as memory ownership, benchmarking, multithreading, zero-copy concepts, real-time considerations, testing, and deployment
-- end-to-end projects and a capstone perception pipeline
+- environment setup and reproducible C++/OpenCV builds
+- image formation, sampling, quantization, and color representation
+- filtering, pyramids, gradients, edges, and corners
+- SIFT/ORB descriptors and feature matching
+- RANSAC, homography, camera models, calibration, stereo, and metric depth
+- optical flow and temporal feature tracking
+- contours, connected components, and shape descriptors
+- HOG + SVM detection
+- k-NN/SVM classical classification
+- correlation + Kalman object tracking and lifecycle states
+
+**Modules 00–19 / Episodes 00–23 are the completed numbered classical Computer Vision course.**
+
+Learned/deep Computer Vision is intentionally continuing in a separate **ML Computer Vision** repository. Production C++ topics and applied projects may be revisited later as optional extensions.
 
 ## Learning Pattern
 
@@ -98,18 +103,16 @@ New lessons use normalized names and stable CMake targets. In particular, course
 
 See [LESSON_GUIDE.md](LESSON_GUIDE.md) for the standard lesson layout and definition of done.
 
-## Course Stages
+## Course Status
 
-| Stage | Focus |
-|---|---|
-| v0.1 | Classical vision foundations |
-| v0.2 | Geometry, cameras, calibration, stereo |
-| v0.3 | Recognition and tracking |
-| v0.4 | Deep computer vision |
-| v0.5 | Production C++ vision on Linux |
-| v1.0 | Complete course + projects + capstone |
+| Stage | Focus | Status |
+|---|---|---|
+| v0.1 | Classical foundations, Modules 00–09 | Complete |
+| v0.2 | Geometry, cameras, stereo and motion, Modules 10–15 | Complete |
+| v0.3 | Recognition and tracking, Modules 16–19 | Complete |
+| v1.0 | Complete numbered classical course, Modules 00–19 | Complete |
 
-See [COURSE_ROADMAP.md](COURSE_ROADMAP.md) for the module-by-module plan.
+The active numbered series ends here. ML/deep Computer Vision continues in a separate repository so classical and learned perception remain cleanly separated.
 
 ## YouTube Integration
 
