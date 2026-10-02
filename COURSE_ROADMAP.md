@@ -59,7 +59,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 | 16 | Contours, connected components, shape descriptors | **Video-ready: region labeling + contour topology + descriptors** |
 | 17 | HOG + SVM object detection | **Video-ready: manual HOG + linear SVM + multiscale detection** |
 | 18 | Classical classification: k-NN, SVM, feature pipelines | **Video-ready: scaling + k-NN/RBF-SVM + confusion metrics** |
-| 19 | Tracking: template matching, correlation, Kalman-filter basics | Planned |
+| 19 | Tracking: template matching, correlation, Kalman-filter basics | **Video-ready: NCC + Kalman prediction/correction + lifecycle states** |
 
 ### Part V — Deep Computer Vision
 
