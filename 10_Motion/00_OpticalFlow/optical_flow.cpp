@@ -12,6 +12,7 @@
 #include <numeric>
 #include <stdexcept>
 #include <string>
+#include <utility>
 #include <vector>
 
 namespace fs = std::filesystem;
@@ -441,11 +442,21 @@ std::vector<FlowTrack> trackForwardBackward(
             continue;
         }
 
+        const double dx =
+            static_cast<double>(
+                points[i].x -
+                backward[i].x);
+
+        const double dy =
+            static_cast<double>(
+                points[i].y -
+                backward[i].y);
+
         track.backward_error =
             static_cast<float>(
-                cv::norm(
-                    points[i] -
-                    backward[i]));
+                std::sqrt(
+                    dx * dx +
+                    dy * dy));
 
         track.valid =
             track.backward_error <=
@@ -996,7 +1007,7 @@ bool processVideo(
         }
 
         cv::Mat overlay =
-            current_bgr.clone();
+            toBgr(current_bgr);
 
         drawPersistentTracks(
             overlay,
