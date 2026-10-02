@@ -17,7 +17,9 @@ find_package(OpenCV 4 REQUIRED COMPONENTS
     imgcodecs
     highgui
     features2d
-    calib3d)
+    calib3d
+    video
+    videoio)
 
 include(CTest)
 
@@ -93,6 +95,9 @@ add_cv9x_example(cv9x_camera_calibration
 add_cv9x_example(cv9x_stereo_vision
     "09_Geometry/03_StereoVision/stereo_vision.cpp")
 
+add_cv9x_example(cv9x_optical_flow
+    "10_Motion/00_OpticalFlow/optical_flow.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -128,6 +133,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_camera_calibration --self-test)
     add_test(NAME cv9x_stereo_vision_self_test
         COMMAND cv9x_stereo_vision --self-test)
+    add_test(NAME cv9x_optical_flow_self_test
+        COMMAND cv9x_optical_flow --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
