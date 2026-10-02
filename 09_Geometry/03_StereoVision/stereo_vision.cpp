@@ -1263,6 +1263,22 @@ int main(int argc, char** argv) {
             pair.evaluation_roi;
     }
 
+    if (options.num_disparities >= left.cols) {
+        std::cerr
+            << "Error: --num-disparities must be smaller than image width.\n";
+        return 1;
+    }
+
+    if (!use_real_images &&
+        known_disparity >= options.num_disparities) {
+        std::cerr
+            << "Error: synthetic ground-truth disparity ("
+            << known_disparity
+            << " px) is outside the configured search range. "
+            << "Increase --num-disparities or adjust fx/baseline/depth.\n";
+        return 1;
+    }
+
     const cv::Mat disparity =
         computeSgbm(
             left,
