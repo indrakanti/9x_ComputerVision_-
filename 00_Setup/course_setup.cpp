@@ -1,5 +1,6 @@
 #include <opencv2/opencv.hpp>
 
+#include <cstdint>
 #include <filesystem>
 #include <fstream>
 #include <iomanip>
