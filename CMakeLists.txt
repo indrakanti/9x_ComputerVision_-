@@ -98,6 +98,9 @@ add_cv9x_example(cv9x_stereo_vision
 add_cv9x_example(cv9x_optical_flow
     "10_Motion/00_OpticalFlow/optical_flow.cpp")
 
+add_cv9x_example(cv9x_shape_analysis
+    "11_Recognition/00_ContoursComponents/shape_analysis.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -135,6 +138,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_stereo_vision --self-test)
     add_test(NAME cv9x_optical_flow_self_test
         COMMAND cv9x_optical_flow --self-test)
+    add_test(NAME cv9x_shape_analysis_self_test
+        COMMAND cv9x_shape_analysis --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
