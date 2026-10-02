@@ -18,9 +18,10 @@ sudo apt install -y build-essential cmake pkg-config libopencv-dev
 
 ## First-machine sanity check
 
-After configuring the repository, build and run Module 00:
+From a clean checkout, configure, build, and run Module 00:
 
 ```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --target cv9x_course_setup
 ./build/cv9x_course_setup --self-test
 ./build/cv9x_course_setup --output-dir build/setup
