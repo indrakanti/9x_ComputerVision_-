@@ -25,7 +25,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 
 | Module | Topic | Status |
 |---|---|---|
-| 00 | Course setup: Linux, C++, OpenCV, CMake, repo workflow | Build foundation complete; lesson planned |
+| 00 | Course setup: Linux, C++, OpenCV, CMake, repo workflow | **Video-ready: toolchain + CMake + CTest + CI workflow** |
 | 01 | Light, cameras, pixels, sampling, quantization, color spaces | Existing material; reorganize |
 | 02 | Point operations: brightness, contrast, inversion, gamma, thresholding | **Video-ready reference lesson** |
 | 03 | Linear filtering and convolution: manual convolution, box and Gaussian filters | **Video-ready: convolution + box/Gaussian** |
