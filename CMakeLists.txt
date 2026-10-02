@@ -90,6 +90,9 @@ add_cv9x_example(cv9x_camera_model
 add_cv9x_example(cv9x_camera_calibration
     "09_Geometry/02_CameraCalibration/camera_calibration.cpp")
 
+add_cv9x_example(cv9x_stereo_vision
+    "09_Geometry/03_StereoVision/stereo_vision.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
@@ -123,6 +126,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_camera_model --self-test)
     add_test(NAME cv9x_camera_calibration_self_test
         COMMAND cv9x_camera_calibration --self-test)
+    add_test(NAME cv9x_stereo_vision_self_test
+        COMMAND cv9x_stereo_vision --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.

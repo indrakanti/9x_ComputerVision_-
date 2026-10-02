@@ -47,7 +47,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 15 | Homography from First Principles — Perspective Rectification in C++ | [lesson + recording script](09_Geometry/00_HomographyPerspective/VIDEO.md) | TBD |
 | 16 | Camera Intrinsics, Extrinsics & Distortion — 3-D to Pixels from First Principles | [lesson + recording script](09_Geometry/01_CameraModel/VIDEO.md) | TBD |
 | 17 | Camera Calibration in C++ — Intrinsics, Distortion & Reprojection Error | [lesson + recording script](09_Geometry/02_CameraCalibration/VIDEO.md) | TBD |
-| 18 | Stereo Vision and Epipolar Geometry — From Two Cameras to Depth | planned | TBD |
+| 18 | Stereo Vision & Epipolar Geometry — From Two Cameras to Metric Depth in C++ | [lesson + recording script](09_Geometry/03_StereoVision/VIDEO.md) | TBD |
 | 19 | Optical Flow — Tracking Motion Between Frames | planned | TBD |
 | 20 | HOG + SVM Object Detection — Classical Vision Before YOLO | planned | TBD |
 | 21 | CNNs for C++ Engineers — Convolution to Classification | planned | TBD |
