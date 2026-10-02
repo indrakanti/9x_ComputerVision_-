@@ -48,6 +48,10 @@ endfunction()
 add_cv9x_example(cv9x_course_setup
     "00_Setup/course_setup.cpp")
 
+# 01 - Image formation
+add_cv9x_example(cv9x_image_formation
+    "01_ImageFormation/image_formation.cpp")
+
 # 02 - Image filtering
 add_cv9x_example(cv9x_convolution
     "02_ImageFiltering/00_ConvolutionFirstPrinciples/convolution.cpp")
@@ -118,6 +122,8 @@ add_cv9x_example(cv9x_classical_tracking
 if(BUILD_TESTING)
     add_test(NAME cv9x_course_setup_self_test
         COMMAND cv9x_course_setup --self-test)
+    add_test(NAME cv9x_image_formation_self_test
+        COMMAND cv9x_image_formation --self-test)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
     add_test(NAME cv9x_point_filter_self_test
