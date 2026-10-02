@@ -26,7 +26,7 @@ The course is designed for engineers who want more than API-level OpenCV example
 | Module | Topic | Status |
 |---|---|---|
 | 00 | Course setup: Linux, C++, OpenCV, CMake, repo workflow | **Video-ready: toolchain + CMake + CTest + CI workflow** |
-| 01 | Light, cameras, pixels, sampling, quantization, color spaces | Existing material; reorganize |
+| 01 | Light, cameras, pixels, sampling, quantization, color spaces | **Video-ready: sampling + aliasing + quantization + color representation** |
 | 02 | Point operations: brightness, contrast, inversion, gamma, thresholding | **Video-ready reference lesson** |
 | 03 | Linear filtering and convolution: manual convolution, box and Gaussian filters | **Video-ready: convolution + box/Gaussian** |
 | 04 | Image pyramids and multi-scale processing | **Video-ready: Gaussian + Laplacian + reconstruction** |
@@ -61,18 +61,13 @@ The course is designed for engineers who want more than API-level OpenCV example
 | 18 | Classical classification: k-NN, SVM, feature pipelines | **Video-ready: scaling + k-NN/RBF-SVM + confusion metrics** |
 | 19 | Tracking: template matching, correlation, Kalman-filter basics | **Video-ready: NCC + Kalman prediction/correction + lifecycle states** |
 
-### Part V — Deep Computer Vision
+### Classical Course Boundary
 
-| Module | Topic | Status |
-|---|---|---|
-| 20 | CNN fundamentals from the convolution operation upward | Planned |
-| 21 | Classification inference with OpenCV DNN / ONNX Runtime | Planned |
-| 22 | Object detection: YOLO-family inference concepts | Planned |
-| 23 | Semantic and instance segmentation | Planned |
-| 24 | Pose / keypoint estimation | Planned |
-| 25 | Vision transformers and modern feature representations | Planned |
+**Modules 00–19 are the completed scope of this repository's numbered classical Computer Vision course.**
 
-### Part VI — Production C++ Vision on Linux
+Learned/deep Computer Vision topics—CNNs, ONNX inference, YOLO-family detection, learned segmentation/pose, and vision transformers—are intentionally moving to a separate **ML Computer Vision** repository rather than extending the numbered sequence here.
+
+### Optional Future Extension — Production C++ Vision on Linux
 
 This part is the primary differentiator of the course.
 
@@ -89,7 +84,7 @@ This part is the primary differentiator of the course.
 | 34 | Testing vision algorithms with synthetic images and golden data | Planned |
 | 35 | Deployment: ONNX, containers, embedded/edge devices | Planned |
 
-### Part VII — Applied Projects
+### Optional Applied Projects
 
 | Project | Deliverable |
 |---|---|
@@ -146,14 +141,14 @@ A lesson is complete when it has:
 7. Add datasets/assets attribution where required.
 8. Add a release/tagging convention matching YouTube course milestones.
 
-## Recommended Release Milestones
+## Release Milestones
 
 - **v0.1 — Classical Vision Foundations:** Modules 00–09
-- **v0.2 — Geometry and Cameras:** Modules 10–15
+- **v0.2 — Geometry, Cameras, Stereo and Motion:** Modules 10–15
 - **v0.3 — Recognition and Tracking:** Modules 16–19
-- **v0.4 — Deep Vision:** Modules 20–25
-- **v0.5 — Production C++ Vision:** Modules 26–35
-- **v1.0 — Complete Course:** all modules + applied projects + capstone
+- **v1.0 — Classical Course Complete:** Modules 00–19, all canonical lessons build and self-test in CI
+
+Production-C++ topics and applied projects remain optional extensions. They do not block completion of the classical numbered course.
 
 ## Course Principle
 

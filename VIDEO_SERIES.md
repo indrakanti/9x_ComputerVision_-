@@ -30,7 +30,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | Ep. | Suggested YouTube Title | Repository Topic | YouTube |
 |---:|---|---|---|
 | 00 | Computer Vision in C++ on Linux — OpenCV, CMake, CTest & CI Setup | [lesson + recording script](00_Setup/VIDEO.md) | TBD |
-| 01 | How a Camera Becomes Pixels — Light, Sampling & Quantization | `Fundametals/` | TBD |
+| 01 | How a Camera Becomes Pixels — Sampling, Quantization, Aliasing & Color in C++ | [lesson + recording script](01_ImageFormation/VIDEO.md) | TBD |
 | 02 | Image Brightness, Contrast, Gamma & Thresholding from First Principles | [lesson + recording script](02_ImageFiltering/01_PointFiltering/VIDEO.md) | TBD |
 | 03 | Convolution Explained Visually — The Core Operation of Computer Vision | [lesson + recording script](02_ImageFiltering/00_ConvolutionFirstPrinciples/VIDEO.md) | TBD |
 | 04 | Box Filter vs Gaussian Filter — Math, C++ and Real Results | [lesson + recording script](02_ImageFiltering/02_LinearFiltering/00_BoxVsGaussian/VIDEO.md) | TBD |
@@ -53,22 +53,12 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 21 | HOG + SVM Object Detection in C++ — Classical Vision Before YOLO | [lesson + recording script](11_Recognition/01_HOGSVM/VIDEO.md) | TBD |
 | 22 | k-NN vs SVM in C++ — Feature Scaling, Confusion Matrices & Classical Classification | [lesson + recording script](11_Recognition/02_ClassicalClassification/VIDEO.md) | TBD |
 | 23 | Object Tracking in C++ — Template Correlation, Kalman Filter & Track Lifecycle | [lesson + recording script](12_Tracking/00_ClassicalTracking/VIDEO.md) | TBD |
-| 24 | CNNs for C++ Engineers — Convolution to Classification | planned | TBD |
-| 25 | Running ONNX Vision Models from C++ | planned | TBD |
-| 26 | YOLO Object Detection in Production C++ | planned | TBD |
-| 27 | Segmentation Explained — Semantic vs Instance | planned | TBD |
-| 28 | `cv::Mat` Memory Model — Copies, ROIs, Ownership and Performance | planned | TBD |
-| 29 | How to Benchmark a Vision Pipeline — Latency, FPS and Jitter | planned | TBD |
-| 30 | Multithreaded Computer Vision Pipelines in C++ | planned | TBD |
-| 31 | Zero-Copy Computer Vision — What It Means and When It Matters | planned | TBD |
-| 32 | Real-Time Linux for Computer Vision — Scheduling and Jitter Basics | planned | TBD |
-| 33 | Testing Computer Vision Algorithms with Synthetic Images | planned | TBD |
-| 34 | Project: Build a Document Scanner in C++ | planned | TBD |
-| 35 | Project: Feature Matching + Panorama Stitching | planned | TBD |
-| 36 | Project: Calibrate a Camera and Estimate Pose | planned | TBD |
-| 37 | Project: Stereo Depth Pipeline | planned | TBD |
-| 38 | Project: Real-Time Object Detection with Latency Metrics | planned | TBD |
-| 39 | Capstone: Build a Production-Style C++ Perception Pipeline | planned | TBD |
+
+## Classical Series Complete
+
+Episodes **00–23** form the complete numbered classical Computer Vision series in this repository.
+
+Learned/deep Computer Vision begins in a separate **ML Computer Vision** repository. Production-C++ and applied-project ideas remain optional extensions rather than additional numbered episodes here.
 
 ## Per-Video Repository File
 
