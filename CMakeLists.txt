@@ -41,8 +41,12 @@ function(add_cv9x_example target source)
 endfunction()
 
 # -----------------------------------------------------------------------------
-# Classical vision lessons currently present in the repository.
+# Canonical course lessons.
 # -----------------------------------------------------------------------------
+
+# 00 - Course setup
+add_cv9x_example(cv9x_course_setup
+    "00_Setup/course_setup.cpp")
 
 # 02 - Image filtering
 add_cv9x_example(cv9x_convolution
@@ -112,6 +116,8 @@ add_cv9x_example(cv9x_classical_tracking
     "12_Tracking/00_ClassicalTracking/classical_tracking.cpp")
 
 if(BUILD_TESTING)
+    add_test(NAME cv9x_course_setup_self_test
+        COMMAND cv9x_course_setup --self-test)
     add_test(NAME cv9x_convolution_self_test
         COMMAND cv9x_convolution --self-test)
     add_test(NAME cv9x_point_filter_self_test
