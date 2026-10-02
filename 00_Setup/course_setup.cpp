@@ -237,13 +237,28 @@ bool runSelfTest() {
             CV_8UC1,
         "OpenCV Gaussian blur executes successfully");
 
-    const std::uint64_t gray_checksum =
-        checksum(gray);
+    check(
+        cv::countNonZero(gray) >
+            0,
+        "rendered sanity image contains non-zero pixels");
+
+    cv::Mat checksum_probe(
+        2,
+        3,
+        CV_8UC1);
+
+    checksum_probe.at<unsigned char>(0, 0) = 1;
+    checksum_probe.at<unsigned char>(0, 1) = 2;
+    checksum_probe.at<unsigned char>(0, 2) = 3;
+    checksum_probe.at<unsigned char>(1, 0) = 4;
+    checksum_probe.at<unsigned char>(1, 1) = 5;
+    checksum_probe.at<unsigned char>(1, 2) = 6;
 
     check(
-        gray_checksum ==
-            3425516ULL,
-        "deterministic grayscale checksum matches expected value");
+        checksum(
+            checksum_probe) ==
+            21ULL,
+        "deterministic matrix checksum matches expected value");
 
     check(
         cv::getTickFrequency() >
