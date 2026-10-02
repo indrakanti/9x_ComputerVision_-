@@ -48,7 +48,7 @@ Replace `TBD` with the public YouTube URL after each video is published.
 | 16 | Camera Intrinsics, Extrinsics & Distortion — 3-D to Pixels from First Principles | [lesson + recording script](09_Geometry/01_CameraModel/VIDEO.md) | TBD |
 | 17 | Camera Calibration in C++ — Intrinsics, Distortion & Reprojection Error | [lesson + recording script](09_Geometry/02_CameraCalibration/VIDEO.md) | TBD |
 | 18 | Stereo Vision & Epipolar Geometry — From Two Cameras to Metric Depth in C++ | [lesson + recording script](09_Geometry/03_StereoVision/VIDEO.md) | TBD |
-| 19 | Optical Flow — Tracking Motion Between Frames | planned | TBD |
+| 19 | Optical Flow in C++ — Lucas-Kanade, Pyramids & Feature Tracking Explained | [lesson + recording script](10_Motion/00_OpticalFlow/VIDEO.md) | TBD |
 | 20 | HOG + SVM Object Detection — Classical Vision Before YOLO | planned | TBD |
 | 21 | CNNs for C++ Engineers — Convolution to Classification | planned | TBD |
 | 22 | Running ONNX Vision Models from C++ | planned | TBD |
