@@ -11,6 +11,7 @@
 #include <random>
 #include <stdexcept>
 #include <string>
+#include <utility>
 #include <vector>
 
 namespace fs = std::filesystem;
@@ -902,8 +903,12 @@ cv::Mat visualizeHog(
 
                 cv::line(
                     enlarged,
-                    center - delta,
-                    center + delta,
+                    cv::Point(
+                        cvRound(center.x - delta.x),
+                        cvRound(center.y - delta.y)),
+                    cv::Point(
+                        cvRound(center.x + delta.x),
+                        cvRound(center.y + delta.y)),
                     cv::Scalar(
                         0,
                         255,
