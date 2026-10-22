@@ -65,6 +65,8 @@ The course is designed for engineers who want more than API-level OpenCV example
 
 **Modules 00–19 are the completed scope of this repository's numbered classical Computer Vision course.**
 
+Post-v1 advanced tracking and repository-hardening work is tracked separately in [ADVANCED_TRACKING_ROADMAP.md](ADVANCED_TRACKING_ROADMAP.md).
+
 Learned/deep Computer Vision topics—CNNs, ONNX inference, YOLO-family detection, learned segmentation/pose, and vision transformers—are intentionally moving to a separate **ML Computer Vision** repository rather than extending the numbered sequence here.
 
 ### Optional Future Extension — Production C++ Vision on Linux
