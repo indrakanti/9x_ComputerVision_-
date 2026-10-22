@@ -3,6 +3,7 @@
 #include <opencv2/videoio.hpp>
 
 #include <algorithm>
+#include <cctype>
 #include <cmath>
 #include <filesystem>
 #include <fstream>
