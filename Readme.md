@@ -19,6 +19,7 @@ Python examples are included where they improve accessibility or make comparison
 - [YouTube Video Series and Link Index](VIDEO_SERIES.md)
 - [Linux Build Guide](BUILDING.md)
 - [Lesson Authoring Guide](LESSON_GUIDE.md)
+- [Advanced Tracking & Repository Hardening](ADVANCED_TRACKING_ROADMAP.md)
 
 The video index is designed so every published YouTube lesson can link directly to its corresponding theory, source code, commands, and exercises in this repository.
 
@@ -113,6 +114,8 @@ See [LESSON_GUIDE.md](LESSON_GUIDE.md) for the standard lesson layout and defini
 | v1.0 | Complete numbered classical course, Modules 00–19 | Complete |
 
 The active numbered series ends here. ML/deep Computer Vision continues in a separate repository so classical and learned perception remain cleanly separated.
+
+Post-v1 extensions now continue under [ADVANCED_TRACKING_ROADMAP.md](ADVANCED_TRACKING_ROADMAP.md). These additions deepen tracking and repository quality without renumbering the completed classical course.
 
 ## YouTube Integration
 
