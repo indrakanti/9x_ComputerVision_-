@@ -1,6 +1,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
+#include <opencv2/videoio.hpp>
 
 #ifdef CV9X_HAVE_OPENCV_TRACKING
 #include <opencv2/tracking.hpp>
@@ -15,6 +16,7 @@
 #include <iostream>
 #include <numeric>
 #include <random>
+#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <utility>
@@ -26,6 +28,9 @@ namespace {
 
 struct Options {
     std::string output_dir;
+    std::string video_path;
+    std::string ground_truth_path;
+    int max_frames = 0;
     int frames = 140;
     int width = 640;
     int height = 360;
@@ -432,6 +437,156 @@ std::vector<FrameSample> makeSyntheticSequence(
     return sequence;
 }
 
+
+std::vector<std::pair<int, cv::Rect2d>> loadGroundTruthCsv(
+    const std::string& path) {
+    std::ifstream file(path);
+    if (!file) {
+        throw std::runtime_error("Could not open ground-truth CSV: " + path);
+    }
+
+    std::vector<std::pair<int, cv::Rect2d>> truth;
+    std::string line;
+    int line_number = 0;
+
+    while (std::getline(file, line)) {
+        ++line_number;
+        if (line.empty()) {
+            continue;
+        }
+
+        std::stringstream stream(line);
+        std::string token;
+        std::vector<std::string> fields;
+
+        while (std::getline(stream, token, ',')) {
+            fields.push_back(token);
+        }
+
+        if (fields.size() != 5) {
+            if (line_number == 1) {
+                continue;
+            }
+            throw std::runtime_error(
+                "Ground-truth CSV must contain frame,x,y,w,h at line " +
+                std::to_string(line_number));
+        }
+
+        try {
+            const int frame = std::stoi(fields[0]);
+            const double x = std::stod(fields[1]);
+            const double y = std::stod(fields[2]);
+            const double width = std::stod(fields[3]);
+            const double height = std::stod(fields[4]);
+
+            if (frame < 0 || width <= 0.0 || height <= 0.0) {
+                throw std::runtime_error("invalid geometry");
+            }
+
+            truth.emplace_back(
+                frame,
+                cv::Rect2d(x, y, width, height));
+        } catch (const std::exception&) {
+            if (line_number == 1) {
+                continue;
+            }
+            throw std::runtime_error(
+                "Invalid ground-truth row at line " +
+                std::to_string(line_number));
+        }
+    }
+
+    if (truth.empty()) {
+        throw std::runtime_error("Ground-truth CSV contains no boxes.");
+    }
+
+    std::sort(
+        truth.begin(),
+        truth.end(),
+        [](const auto& a, const auto& b) {
+            return a.first < b.first;
+        });
+
+    for (std::size_t i = 1; i < truth.size(); ++i) {
+        if (truth[i].first != truth[i - 1].first + 1) {
+            throw std::runtime_error(
+                "Ground-truth frames must be contiguous for single-object tracking.");
+        }
+    }
+
+    return truth;
+}
+
+std::vector<FrameSample> loadRealSequence(
+    const std::string& video_path,
+    const std::string& ground_truth_path,
+    int max_frames) {
+    const auto truth = loadGroundTruthCsv(ground_truth_path);
+
+    cv::VideoCapture capture(video_path);
+    if (!capture.isOpened()) {
+        throw std::runtime_error("Could not open video: " + video_path);
+    }
+
+    const int first_frame = truth.front().first;
+    const int last_frame = truth.back().first;
+    const int requested_count =
+        max_frames > 0
+            ? std::min(max_frames, static_cast<int>(truth.size()))
+            : static_cast<int>(truth.size());
+
+    std::vector<FrameSample> sequence;
+    sequence.reserve(static_cast<std::size_t>(requested_count));
+
+    cv::Mat frame;
+    int decoded_index = -1;
+    std::size_t truth_index = 0;
+
+    while (capture.read(frame)) {
+        ++decoded_index;
+
+        if (decoded_index < first_frame) {
+            continue;
+        }
+        if (decoded_index > last_frame ||
+            static_cast<int>(sequence.size()) >= requested_count) {
+            break;
+        }
+
+        if (truth_index >= truth.size()) {
+            break;
+        }
+
+        if (decoded_index == truth[truth_index].first) {
+            const cv::Rect2d& box = truth[truth_index].second;
+
+            if (box.x < 0.0 ||
+                box.y < 0.0 ||
+                box.x + box.width > static_cast<double>(frame.cols) ||
+                box.y + box.height > static_cast<double>(frame.rows)) {
+                throw std::runtime_error(
+                    "Ground-truth box lies outside video frame at index " +
+                    std::to_string(decoded_index));
+            }
+
+            sequence.push_back({frame.clone(), box});
+            ++truth_index;
+        }
+    }
+
+    if (sequence.size() < 2) {
+        throw std::runtime_error(
+            "Need at least two annotated video frames for tracking.");
+    }
+
+    if (static_cast<int>(sequence.size()) != requested_count) {
+        throw std::runtime_error(
+            "Video ended before all requested ground-truth frames were decoded.");
+    }
+
+    return sequence;
+}
+
 std::vector<TrackerRecord> evaluateMosse(
     const std::vector<FrameSample>& sequence,
     double learning_rate,
@@ -792,6 +947,107 @@ cv::Mat renderSuccessPlot(
     return image;
 }
 
+cv::Mat renderPrecisionPlot(
+    const std::vector<std::vector<TrackerRecord>>& all_records) {
+    const int width = 760;
+    const int height = 440;
+    const int left = 70;
+    const int right = 30;
+    const int top = 35;
+    const int bottom = 60;
+    const int plot_w = width - left - right;
+    const int plot_h = height - top - bottom;
+    constexpr double kMaxThreshold = 50.0;
+
+    cv::Mat image(height, width, CV_8UC3, cv::Scalar(245, 245, 245));
+
+    cv::line(
+        image,
+        cv::Point(left, top + plot_h),
+        cv::Point(left + plot_w, top + plot_h),
+        cv::Scalar(30, 30, 30),
+        2);
+    cv::line(
+        image,
+        cv::Point(left, top),
+        cv::Point(left, top + plot_h),
+        cv::Scalar(30, 30, 30),
+        2);
+
+    const std::vector<cv::Scalar> colors = {
+        cv::Scalar(0, 150, 0),
+        cv::Scalar(0, 120, 220),
+        cv::Scalar(220, 80, 40)};
+
+    for (std::size_t tracker_index = 0;
+         tracker_index < all_records.size();
+         ++tracker_index) {
+        const auto& records = all_records[tracker_index];
+        if (records.empty()) {
+            continue;
+        }
+
+        std::vector<cv::Point> points;
+        for (int step = 0; step <= 100; ++step) {
+            const double threshold =
+                kMaxThreshold * static_cast<double>(step) / 100.0;
+            int hits = 0;
+            for (const auto& record : records) {
+                hits += record.center_error <= threshold ? 1 : 0;
+            }
+
+            const double precision =
+                static_cast<double>(hits) /
+                static_cast<double>(records.size());
+
+            points.emplace_back(
+                left + step * plot_w / 100,
+                top + plot_h -
+                    static_cast<int>(std::round(precision * plot_h)));
+        }
+
+        cv::polylines(
+            image,
+            points,
+            false,
+            colors[tracker_index % colors.size()],
+            2,
+            cv::LINE_AA);
+
+        cv::putText(
+            image,
+            records.front().tracker,
+            cv::Point(left + 20, top + 25 + static_cast<int>(tracker_index) * 24),
+            cv::FONT_HERSHEY_SIMPLEX,
+            0.55,
+            colors[tracker_index % colors.size()],
+            2,
+            cv::LINE_AA);
+    }
+
+    cv::putText(
+        image,
+        "center-error threshold (px)",
+        cv::Point(width / 2 - 95, height - 18),
+        cv::FONT_HERSHEY_SIMPLEX,
+        0.55,
+        cv::Scalar(30, 30, 30),
+        1,
+        cv::LINE_AA);
+
+    cv::putText(
+        image,
+        "precision",
+        cv::Point(8, 24),
+        cv::FONT_HERSHEY_SIMPLEX,
+        0.55,
+        cv::Scalar(30, 30, 30),
+        1,
+        cv::LINE_AA);
+
+    return image;
+}
+
 bool runSelfTest() {
     bool passed = true;
 
@@ -907,6 +1163,12 @@ bool parseArguments(int argc, char** argv, Options& options) {
             const std::string arg = argv[i];
             if (arg == "--output-dir") {
                 options.output_dir = value(i, arg);
+            } else if (arg == "--video") {
+                options.video_path = value(i, arg);
+            } else if (arg == "--ground-truth") {
+                options.ground_truth_path = value(i, arg);
+            } else if (arg == "--max-frames") {
+                options.max_frames = std::stoi(value(i, arg));
             } else if (arg == "--frames") {
                 options.frames = std::stoi(value(i, arg));
             } else if (arg == "--width") {
@@ -943,13 +1205,28 @@ bool validateOptions(const Options& options) {
         return false;
     }
 
-    if (options.frames < 20 ||
-        options.width < 320 ||
-        options.height < 220 ||
+    const bool has_video = !options.video_path.empty();
+    const bool has_truth = !options.ground_truth_path.empty();
+
+    if (has_video != has_truth) {
+        std::cerr
+            << "Error: --video and --ground-truth must be provided together.\n";
+        return false;
+    }
+
+    if (options.max_frames < 0 ||
         options.learning_rate <= 0.0 ||
         options.learning_rate > 1.0 ||
         options.psr_threshold <= 0.0) {
-        std::cerr << "Error: invalid MOSSE experiment configuration.\n";
+        std::cerr << "Error: invalid tracker experiment configuration.\n";
+        return false;
+    }
+
+    if (!has_video &&
+        (options.frames < 20 ||
+         options.width < 320 ||
+         options.height < 220)) {
+        std::cerr << "Error: invalid synthetic experiment configuration.\n";
         return false;
     }
 
@@ -991,8 +1268,28 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    const auto sequence =
-        makeSyntheticSequence(options.frames, options.width, options.height);
+    std::vector<FrameSample> sequence;
+
+    try {
+        if (!options.video_path.empty()) {
+            sequence = loadRealSequence(
+                options.video_path,
+                options.ground_truth_path,
+                options.max_frames);
+        } else {
+            sequence =
+                makeSyntheticSequence(
+                    options.frames,
+                    options.width,
+                    options.height);
+        }
+    } catch (const std::exception& error) {
+        std::cerr
+            << "Error: "
+            << error.what()
+            << '\n';
+        return 1;
+    }
 
     std::vector<std::vector<TrackerRecord>> all_records;
     all_records.push_back(
@@ -1028,19 +1325,23 @@ int main(int argc, char** argv) {
 
     const cv::Mat overlay = renderComparison(sequence, all_records);
     const cv::Mat success_plot = renderSuccessPlot(all_records);
+    const cv::Mat precision_plot = renderPrecisionPlot(all_records);
 
     if (!cv::imwrite(
             (output_dir / "tracker_comparison_last_frame.png").string(),
             overlay) ||
         !cv::imwrite(
             (output_dir / "success_plot.png").string(),
-            success_plot)) {
+            success_plot) ||
+        !cv::imwrite(
+            (output_dir / "precision_plot.png").string(),
+            precision_plot)) {
         std::cerr << "Error: failed to write comparison images\n";
         return 1;
     }
 
     std::cout
-        << "Advanced Tracking A4 - MOSSE / KCF / CSRT comparison\n"
+        << "Advanced Tracking A4/A5 - MOSSE / KCF / CSRT benchmark\n"
         << std::fixed
         << std::setprecision(4);
 

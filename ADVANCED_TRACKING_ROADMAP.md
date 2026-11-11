@@ -12,7 +12,7 @@ These are post-v1 extensions. They improve technical depth and repository qualit
 | A2 | Background subtraction (MOG2), blob extraction, MeanShift and CamShift, detect-then-track pipeline | **Implemented in PR 29** |
 | A3 | Extended Kalman filter with nonlinear/turning motion and NIS/NEES consistency checks | **Implemented in PR 30** |
 | A4 | MOSSE correlation filter from first principles; KCF/CSRT comparison where OpenCV contrib is available | **Implemented in PR 31** |
-| A5 | Real captured test video, reproducible download/attribution, success/precision plots, tracker comparison | 32 |
+| A5 | Real captured test video, reproducible download/attribution, success/precision plots, tracker comparison | **Implemented in PR 32** |
 
 ## Repository hardening
 
