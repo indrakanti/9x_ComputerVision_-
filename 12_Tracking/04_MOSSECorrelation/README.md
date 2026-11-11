@@ -115,6 +115,20 @@ These are conceptual differences, not a universal ranking.
 
 Latency is local engineering evidence, not a portable benchmark; compiler flags, CPU, OpenCV build options, power state, and threading all matter.
 
+## Real-video benchmark
+
+A5 / PR #32 extends this executable with a generic real-video path:
+
+~~~text
+--video <path>
+--ground-truth <frame,x,y,w,h CSV>
+--max-frames <optional limit>
+~~~
+
+See [REAL_VIDEO_BENCHMARK.md](REAL_VIDEO_BENCHMARK.md) for the reproducible external sample, attribution policy, annotation conversion, and benchmark procedure.
+
+Ground truth initializes the first frame and is then used only for evaluation; trackers are not reinitialized from truth.
+
 ## Build
 
 ~~~bash
@@ -132,7 +146,10 @@ tracker_frames.csv
 tracker_summary.csv
 tracker_comparison_last_frame.png
 success_plot.png
+precision_plot.png
 ~~~
+
+The precision plot sweeps center-error thresholds from 0 to 50 pixels, complementing the IoU success curve.
 
 ## Deterministic self-test
 
