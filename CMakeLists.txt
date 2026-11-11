@@ -20,7 +20,9 @@ find_package(OpenCV 4 REQUIRED COMPONENTS
     calib3d
     video
     videoio
-    ml)
+    ml
+    OPTIONAL_COMPONENTS
+    tracking)
 
 include(CTest)
 
@@ -128,6 +130,17 @@ add_cv9x_example(cv9x_background_camshift
 add_cv9x_example(cv9x_extended_kalman
     "12_Tracking/03_ExtendedKalman/extended_kalman.cpp")
 
+add_cv9x_example(cv9x_mosse_correlation
+    "12_Tracking/04_MOSSECorrelation/mosse_correlation.cpp")
+
+if(OpenCV_tracking_FOUND)
+    target_compile_definitions(cv9x_mosse_correlation PRIVATE
+        CV9X_HAVE_OPENCV_TRACKING=1)
+    if(TARGET opencv_tracking)
+        target_link_libraries(cv9x_mosse_correlation PRIVATE opencv_tracking)
+    endif()
+endif()
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_course_setup_self_test
         COMMAND cv9x_course_setup --self-test)
@@ -183,6 +196,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_background_camshift --self-test)
     add_test(NAME cv9x_extended_kalman_self_test
         COMMAND cv9x_extended_kalman --self-test)
+    add_test(NAME cv9x_mosse_correlation_self_test
+        COMMAND cv9x_mosse_correlation --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
@@ -239,4 +254,9 @@ add_cv9x_example(cv9x_sift_descriptor_math
     "07_SIFT/03_SHIFTKeypointDesciptor/shiftdescriptormath.cpp")
 
 message(STATUS "OpenCV version: ${OpenCV_VERSION}")
+if(OpenCV_tracking_FOUND)
+    message(STATUS "OpenCV tracking module: available (KCF/CSRT comparison enabled)")
+else()
+    message(STATUS "OpenCV tracking module: unavailable (MOSSE-only build)")
+endif()
 message(STATUS "9x CV examples will be written to: ${CMAKE_BINARY_DIR}")
