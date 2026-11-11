@@ -482,7 +482,8 @@ SyntheticDetectionSequence makeSyntheticDetectionSequence(
 }
 
 SyntheticColorSequence makeSyntheticColorSequence(
-    int frame_count) {
+    int frame_count,
+    double scale_growth_per_frame) {
     SyntheticColorSequence sequence;
 
     const cv::Size frame_size(
@@ -499,7 +500,7 @@ SyntheticColorSequence makeSyntheticColorSequence(
 
         const double scale =
             1.0 +
-            0.012 *
+            scale_growth_per_frame *
                 static_cast<double>(
                     frame_index);
 
@@ -995,13 +996,20 @@ bool runSelfTest() {
             "MOG2 blob localization has high overlap with synthetic truth");
     }
 
-    const auto color_sequence =
-        makeSyntheticColorSequence(36);
+    const auto mean_shift_sequence =
+        makeSyntheticColorSequence(
+            36,
+            0.0);
+
+    const auto cam_shift_sequence =
+        makeSyntheticColorSequence(
+            36,
+            0.012);
 
     const cv::Mat histogram =
         hueHistogram(
-            color_sequence.frames.front(),
-            color_sequence.initial_roi);
+            mean_shift_sequence.frames.front(),
+            mean_shift_sequence.initial_roi);
 
     check(
         !histogram.empty() &&
@@ -1010,13 +1018,13 @@ bool runSelfTest() {
 
     const cv::Mat back_projection =
         hueBackProjection(
-            color_sequence.frames.front(),
+            mean_shift_sequence.frames.front(),
             histogram);
 
     const double inside_mean =
         cv::mean(
             back_projection(
-                color_sequence.initial_roi))[0];
+                mean_shift_sequence.initial_roi))[0];
 
     const cv::Rect background_roi(
         5,
@@ -1037,25 +1045,30 @@ bool runSelfTest() {
 
     const auto mean_shift_boxes =
         trackMeanShift(
-            color_sequence.frames,
-            color_sequence.initial_roi,
+            mean_shift_sequence.frames,
+            mean_shift_sequence.initial_roi,
             histogram);
+
+    const cv::Mat cam_histogram =
+        hueHistogram(
+            cam_shift_sequence.frames.front(),
+            cam_shift_sequence.initial_roi);
 
     const auto cam_shift_boxes =
         trackCamShift(
-            color_sequence.frames,
-            color_sequence.initial_roi,
-            histogram);
+            cam_shift_sequence.frames,
+            cam_shift_sequence.initial_roi,
+            cam_histogram);
 
     const TrackingMetrics mean_metrics =
         computeTrackingMetrics(
             mean_shift_boxes,
-            color_sequence.truth);
+            mean_shift_sequence.truth);
 
     const TrackingMetrics cam_metrics =
         computeTrackingMetrics(
             cam_shift_boxes,
-            color_sequence.truth);
+            cam_shift_sequence.truth);
 
     check(
         mean_metrics.mean_center_error <=
@@ -1200,7 +1213,9 @@ int runSyntheticDemo(
     }
 
     const auto color_sequence =
-        makeSyntheticColorSequence(55);
+        makeSyntheticColorSequence(
+            55,
+            0.012);
 
     const cv::Mat histogram =
         hueHistogram(
