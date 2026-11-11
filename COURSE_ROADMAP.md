@@ -65,13 +65,13 @@ The course is designed for engineers who want more than API-level OpenCV example
 
 **Modules 00–19 are the completed scope of this repository's numbered classical Computer Vision course.**
 
-Post-v1 advanced tracking and repository-hardening work is tracked separately in [ADVANCED_TRACKING_ROADMAP.md](ADVANCED_TRACKING_ROADMAP.md).
+Advanced tracking A1–A5 and repository closeout are tracked in [ADVANCED_TRACKING_ROADMAP.md](ADVANCED_TRACKING_ROADMAP.md). The canonical module/episode/path mapping is in [COURSE_INDEX.md](COURSE_INDEX.md).
 
-Learned/deep Computer Vision topics—CNNs, ONNX inference, YOLO-family detection, learned segmentation/pose, and vision transformers—are intentionally moving to a separate **ML Computer Vision** repository rather than extending the numbered sequence here.
+Learned/deep Computer Vision topics—CNNs, ONNX inference, YOLO-family detection, learned segmentation/pose, and vision transformers—continue in **[9x ML Computer Vision](https://github.com/indrakanti/9x_ML_ComputerVision)** rather than extending the numbered sequence here.
 
-### Optional Future Extension — Production C++ Vision on Linux
+### Deferred Ideas — Not Part of the v1.0 Numbered Course
 
-This part is the primary differentiator of the course.
+The following production-C++ topics remain useful future material, but they are explicitly **not required for Part 1 completion** and are not part of Modules 00–19.
 
 | Module | Topic | Status |
 |---|---|---|
@@ -134,14 +134,16 @@ A lesson is complete when it has:
 
 ## Repository Modernization Work
 
-1. **Done:** add a top-level CMake build.
-2. Standardize naming and fix spelling/casing inconsistencies.
-3. **Done:** add CI to compile the C++ examples and run lesson tests.
-4. Add formatting/static-analysis configuration.
-5. Add a license selected by the repository owner.
-6. Add contribution guidelines.
-7. Add datasets/assets attribution where required.
-8. Add a release/tagging convention matching YouTube course milestones.
+1. **Done:** top-level CMake build.
+2. **Done:** canonical naming plus compatibility documentation for legacy paths.
+3. **Done:** CI compiles the C++ examples and runs lesson tests.
+4. **Done:** clang-format, clang-tidy, EditorConfig, and PR hygiene.
+5. **Done:** Apache License 2.0.
+6. **Done:** contribution guidelines.
+7. **Done:** explicit external-data/media licensing policy and reproducible-download guidance.
+8. **Done:** v1.0.0 release convention and canonical course index.
+
+Broader multi-platform/compiler CI and deeper modernization of every historical example are maintenance opportunities, not Part 1 release blockers.
 
 ## Release Milestones
 

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(9x_computer_vision
-    VERSION 0.2.0
+    VERSION 1.0.0
     DESCRIPTION "Computer Vision from First Principles to Production C++ on Linux"
     LANGUAGES CXX)
 
@@ -12,7 +12,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 option(CV9X_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
 option(CV9X_ENABLE_CLANG_TIDY "Run clang-tidy during compilation" OFF)
 
-# Static analysis is opt-in so the baseline course build only requires CMake/OpenCV.
 if(CV9X_ENABLE_CLANG_TIDY)
     find_program(CV9X_CLANG_TIDY_EXE NAMES clang-tidy REQUIRED)
     set(CMAKE_CXX_CLANG_TIDY

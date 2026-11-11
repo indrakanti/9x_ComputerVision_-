@@ -15,6 +15,7 @@ Python examples are included where they improve accessibility or make comparison
 
 ## Course Resources
 
+- [Part 1 Canonical Course Index](COURSE_INDEX.md)
 - [Complete Course Roadmap](COURSE_ROADMAP.md)
 - [YouTube Video Series and Link Index](VIDEO_SERIES.md)
 - [Linux Build Guide](BUILDING.md)
@@ -53,7 +54,7 @@ The canonical classical course now covers:
 
 **Modules 00–19 / Episodes 00–23 are the completed numbered classical Computer Vision course.**
 
-Learned/deep Computer Vision is intentionally continuing in a separate **ML Computer Vision** repository. Production C++ topics and applied projects may be revisited later as optional extensions.
+**Part 1 is complete at v1.0.0.** Learned/deep Computer Vision continues in **[9x ML Computer Vision](https://github.com/indrakanti/9x_ML_ComputerVision)**. Production C++ topics and applied projects may be revisited later as optional extensions, but they do not extend the numbered Part 1 sequence.
 
 ## Learning Pattern
 
@@ -115,9 +116,9 @@ See [NAMING_COMPATIBILITY.md](NAMING_COMPATIBILITY.md) for the canonical/legacy 
 | v0.3 | Recognition and tracking, Modules 16–19 | Complete |
 | v1.0 | Complete numbered classical course, Modules 00–19 | Complete |
 
-The active numbered series ends here. ML/deep Computer Vision continues in a separate repository so classical and learned perception remain cleanly separated.
+The active numbered Part 1 series ends here. Continue with **[Part 2 — 9x ML Computer Vision](https://github.com/indrakanti/9x_ML_ComputerVision)** for learned/deep perception.
 
-Post-v1 extensions now continue under [ADVANCED_TRACKING_ROADMAP.md](ADVANCED_TRACKING_ROADMAP.md). These additions deepen tracking and repository quality without renumbering the completed classical course.
+Advanced tracking A1–A5 and the v1 repository-hardening closeout are complete. See [ADVANCED_TRACKING_ROADMAP.md](ADVANCED_TRACKING_ROADMAP.md), [COURSE_INDEX.md](COURSE_INDEX.md), and [CHANGELOG.md](CHANGELOG.md).
 
 ## YouTube Integration
 
