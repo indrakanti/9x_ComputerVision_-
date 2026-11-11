@@ -425,11 +425,15 @@ public:
                 "Innovation covariance is singular.");
         }
 
+        const cv::Mat nis_matrix =
+            innovation.t() *
+            innovation_inverse *
+            innovation;
+
         const double nis =
-            (innovation.t() *
-             innovation_inverse *
-             innovation)
-                .at<double>(0, 0);
+            nis_matrix.at<double>(
+                0,
+                0);
 
         const cv::Mat gain =
             covariance_ *
@@ -497,11 +501,14 @@ public:
                 infinity();
         }
 
-        return
-            (error.t() *
-             inverse *
-             error)
-                .at<double>(0, 0);
+        const cv::Mat nees_matrix =
+            error.t() *
+            inverse *
+            error;
+
+        return nees_matrix.at<double>(
+            0,
+            0);
     }
 
     const cv::Mat& state() const {
