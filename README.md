@@ -104,7 +104,7 @@ Some early lesson directories contain legacy spelling or naming inconsistencies.
 
 New lessons use normalized names and stable CMake targets. In particular, course-facing build targets use the correct **SIFT** terminology even where a legacy path currently contains `SHIFT`.
 
-See [LESSON_GUIDE.md](LESSON_GUIDE.md) for the standard lesson layout and definition of done.
+See [NAMING_COMPATIBILITY.md](NAMING_COMPATIBILITY.md) for the canonical/legacy path map and [LESSON_GUIDE.md](LESSON_GUIDE.md) for the standard lesson layout and definition of done.
 
 ## Course Status
 

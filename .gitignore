@@ -25,3 +25,9 @@ venv/
 .vscode/
 .idea/
 .DS_Store
+
+# CTest / tooling scratch
+Testing/
+.cache/
+*.swp
+*~
