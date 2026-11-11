@@ -1129,8 +1129,6 @@ int runSyntheticDemo(
         detection_sequence.frames.front().size(),
         true);
 
-    Mog2FrameResult representative;
-
     for (std::size_t frame = 0;
          frame <
              detection_sequence.frames.size();
@@ -1156,9 +1154,6 @@ int runSyntheticDemo(
         if (frame ==
             static_cast<std::size_t>(
                 detection_sequence.warmup_frames)) {
-            representative =
-                result;
-
             cv::imwrite(
                 (output_dir /
                  "01_background_model_input.png")
