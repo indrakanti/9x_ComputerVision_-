@@ -175,7 +175,8 @@ public:
         std::uniform_real_distribution<double> scale(0.97, 1.03);
         std::uniform_real_distribution<double> offset(-2.0, 2.0);
 
-        for (int i = 0; i < 12; ++i) {
+        constexpr int kInitialSamples = 12;
+        for (int i = 0; i < kInitialSamples; ++i) {
             cv::Mat patch = extractPatch(frame, center_, size_);
             if (i > 0) {
                 const cv::Point2f c(
@@ -192,6 +193,8 @@ public:
             accumulateTraining(patch, 1.0);
         }
 
+        numerator_ /= static_cast<float>(kInitialSamples);
+        denominator_ /= static_cast<float>(kInitialSamples);
         recomputeFilter();
         initialized_ = true;
     }
