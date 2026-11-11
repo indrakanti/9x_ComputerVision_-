@@ -10,6 +10,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 option(CV9X_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
+option(CV9X_ENABLE_CLANG_TIDY "Run clang-tidy during compilation" OFF)
+
+if(CV9X_ENABLE_CLANG_TIDY)
+    find_program(CV9X_CLANG_TIDY_EXE NAMES clang-tidy REQUIRED)
+    set(CMAKE_CXX_CLANG_TIDY
+        "${CV9X_CLANG_TIDY_EXE};--config-file=${CMAKE_SOURCE_DIR}/.clang-tidy")
+endif()
 
 find_package(OpenCV 4 REQUIRED COMPONENTS
     core
