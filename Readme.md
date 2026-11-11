@@ -20,6 +20,8 @@ Python examples are included where they improve accessibility or make comparison
 - [Linux Build Guide](BUILDING.md)
 - [Lesson Authoring Guide](LESSON_GUIDE.md)
 - [Advanced Tracking & Repository Hardening](ADVANCED_TRACKING_ROADMAP.md)
+- [Contributing](CONTRIBUTING.md)
+- [Apache License 2.0](LICENSE)
 
 The video index is designed so every published YouTube lesson can link directly to its corresponding theory, source code, commands, and exercises in this repository.
 
@@ -143,7 +145,9 @@ Contributions that improve explanations, fix code, add tests, create useful visu
 
 New or modernized lessons should follow [LESSON_GUIDE.md](LESSON_GUIDE.md) and build through the top-level CMake project.
 
-A repository license still needs to be selected before the project is presented as a fully reusable open-source course.
+Repository-owned source code and documentation are licensed under the [Apache License 2.0](LICENSE), unless a file states otherwise.
+
+Third-party images, videos, datasets, annotations, model files, figures, logos, and other external assets remain subject to their original licenses and usage terms. The repository license does not automatically grant redistribution rights for those assets. See [CONTRIBUTING.md](CONTRIBUTING.md) for the external-data policy.
 
 ## Course Philosophy
 
