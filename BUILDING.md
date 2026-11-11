@@ -80,6 +80,35 @@ cmake --build build-werror --parallel
 
 This is intentionally opt-in while older examples are being modernized.
 
+## Formatting
+
+The repository includes a root `.clang-format`. Format a changed C++ file with:
+
+```bash
+clang-format -i path/to/file.cpp
+```
+
+For a patch, prefer formatting only the files you changed rather than reformatting unrelated legacy code.
+
+## clang-tidy
+
+The repository includes a pragmatic root `.clang-tidy`. It is intentionally opt-in so contributors are not required to install LLVM tooling for the baseline build.
+
+Run clang-tidy through CMake:
+
+```bash
+cmake -S . -B build-tidy \
+  -DCMAKE_BUILD_TYPE=Debug \
+  -DCV9X_ENABLE_CLANG_TIDY=ON
+cmake --build build-tidy --parallel
+```
+
+The configuration emphasizes bug-prone, performance, portability, and a small set of low-noise readability checks.
+
+## Editor defaults
+
+A root `.editorconfig` standardizes UTF-8, LF line endings, final newlines, and four-space C++ indentation.
+
 ## Running examples
 
 Canonical lessons use explicit command-line arguments, deterministic synthetic inputs where appropriate, and `--self-test` modes registered with CTest.
