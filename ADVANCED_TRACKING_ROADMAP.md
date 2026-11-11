@@ -16,14 +16,14 @@ These are post-v1 extensions. They improve technical depth and repository qualit
 
 ## Repository hardening
 
-| Extension | Scope |
-|---|---|
-| H1 | License selected by repository owner |
-| H2 | Canonical naming + compatibility redirects for legacy misspelled paths |
-| H3 | Legacy-example inventory and test/data modernization |
-| H4 | Canonical numbering/index mapping across folders, modules and episodes |
-| H5 | clang-format, clang-tidy, CONTRIBUTING.md and pre-commit guidance |
-| H6 | Broader platform/version CI, including additional Linux/compiler coverage and OpenCV-version experiments |
+| Extension | Scope | Status |
+|---|---|---|
+| H1 | License selected by repository owner | **Implemented in PR 33 — Apache-2.0** |
+| H2 | Canonical naming + compatibility redirects for legacy misspelled paths | **Implemented in PR 34** |
+| H3 | Legacy-example inventory and test/data modernization | **Baseline complete; deeper legacy modernization deferred maintenance** |
+| H4 | Canonical numbering/index mapping across folders, modules and episodes | **Implemented in PR 36** |
+| H5 | clang-format, clang-tidy, CONTRIBUTING.md and PR guidance | **Implemented in PRs 33 and 35** |
+| H6 | Broader platform/version CI, including additional Linux/compiler coverage and OpenCV-version experiments | **Deferred maintenance; not a v1.0 blocker** |
 
 ## Design rules
 
@@ -34,3 +34,7 @@ These are post-v1 extensions. They improve technical depth and repository qualit
 - Keep deterministic synthetic tests even after real-video tests are added.
 - Separate algorithm correctness from benchmark/performance evidence.
 - Keep optional OpenCV-contrib dependencies isolated from the baseline build.
+
+## Part 1 closure
+
+Part 1 will be tagged as **v1.0.0 — Classical Computer Vision Complete** after PR #36 is merged and CI is green. New learned/deep Computer Vision work continues in [9x ML Computer Vision](https://github.com/indrakanti/9x_ML_ComputerVision).
