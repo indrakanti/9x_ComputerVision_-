@@ -125,6 +125,9 @@ add_cv9x_example(cv9x_multi_object_tracking
 add_cv9x_example(cv9x_background_camshift
     "12_Tracking/02_BackgroundCamShift/background_camshift.cpp")
 
+add_cv9x_example(cv9x_extended_kalman
+    "12_Tracking/03_ExtendedKalman/extended_kalman.cpp")
+
 if(BUILD_TESTING)
     add_test(NAME cv9x_course_setup_self_test
         COMMAND cv9x_course_setup --self-test)
@@ -178,6 +181,8 @@ if(BUILD_TESTING)
         COMMAND cv9x_multi_object_tracking --self-test)
     add_test(NAME cv9x_background_camshift_self_test
         COMMAND cv9x_background_camshift --self-test)
+    add_test(NAME cv9x_extended_kalman_self_test
+        COMMAND cv9x_extended_kalman --self-test)
 endif()
 
 # Legacy focused examples retained while their lessons are migrated.
