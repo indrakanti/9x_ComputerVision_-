@@ -1,3 +1,5 @@
+> **Legacy path:** The directory name `Fundametals` is a historical misspelling retained so older links continue to work. Use [../Fundamentals/README.md](../Fundamentals/README.md) for the canonical spelling.
+
 > **Canonical course note:** This directory contains the original optics/light notes and historical assets. The current course-facing Module 01 is [01_ImageFormation](../01_ImageFormation/README.md), which connects these optics concepts to sampling, aliasing, quantization, color spaces, and the digital image representation. This legacy path is intentionally preserved so older links remain valid.
 
 # Light: A Comprehensive Overview
